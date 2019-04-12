@@ -1,0 +1,359 @@
+/* fonts */
+@font-face {
+	font-family: "Kepler Black";
+	src: 
+		local('Kepler Std Black Extended'), 
+		local('KeplerStd-BlackExt'),
+        url('../fonts/KeplerStd-BlackExt.woff2') format('woff2'),
+        url('../fonts/KeplerStd-BlackExt.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Kelvinch";
+	src: local("Kelvinch");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Kelvinch";
+	src: local("Kelvinch Bold");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Kelvinch";
+	src: local("Kelvinch Italic");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Kelvinch";
+	src: local("Kelvinch Bold Italic");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Franklin Gothic";
+	src: 
+		local('Franklin Gothic Demi Cond'), 
+		local('FranklinGothic-DemiCond'),
+        url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
+        url('../fonts/FranklinGothic-DemiCond.woff') format('woff');
+}
+
+
+/* variables */
+:root {
+	--main-width: 800px;
+	--main-spacing: 105px;
+	--body-width: calc(100vw - (var(--main-spacing) * 2));
+}
+
+
+/* elements */
+body {
+	margin: 0px;
+	
+	font-family: "Kelvinch", serif;
+	font-size: 1em;
+	font-variant-ligatures: no-common-ligatures;
+}
+
+main {
+	max-width: var(--main-width);
+	margin: 0px 0px 0px var(--main-spacing); 
+	padding: 0px;
+}
+
+article, nav {
+	margin: 72px 0px 72px 0px;
+}	
+
+hgroup a:not(:hover) {
+	text-decoration: none;
+	border: none;
+}
+
+h1 {
+	margin: 0px 0px 0.5em 0px;
+	line-height: 1em;
+	
+	max-width: 50%;
+	
+	font-family: "Franklin Gothic", sans-serif;
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+h2 {
+	margin: 1.1em 0px 1.1em 0px;
+	line-height: 1em;
+	
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+p, ul:not(.breadcrumbs) {
+	margin: 1em 0px 1em 0px;
+	line-height: inital;
+	
+	text-align: justify;
+	text-justify: inter-character;
+	hyphens: auto;
+}
+
+span.no-break {
+	display: block;
+}
+
+.hero-line {
+	font-variant: small-caps;
+	font-weight: 800;
+	text-shadow: 1px 0px 0px rgba(0,0,0,0.05);
+	text-transform: lowercase;
+}
+
+.hero-paragraph {
+	margin-bottom: 4.5em;
+}
+
+.drop-cap {
+	width: 83px;
+	height: 78px;
+	margin: 6px 20px 0px 8px;
+	display: inline-block;
+	float: left;
+	
+	line-height: 31%;
+	text-indent: 9px;
+	
+	font-family: "Kepler Black", serif;
+	font-size: 232px;
+	text-transform: lowercase;
+	
+	color: white;
+	background-color: #486DB6;
+	background-image: url("../images/dropcapbg.png");
+	background-repeat: repeat, repeat;
+	background-size: 6.666px 8px;
+	image-rendering: -moz-crisp-edges;
+	
+	/*border: solid 1px black;*/
+	overflow: hidden;
+	transform: scale(1.2,1);
+	
+	text-shadow: 1px 0px 0px rgba(255,0,255,0.2), 0px 1px 0px rgba(0,255,0,0.1);
+}
+
+.drop-cap.a { line-height: 31%; text-indent: 9px; }
+.drop-cap.b { line-height: 52%; text-indent: 3px; }
+.drop-cap.c { line-height: 30%; text-indent: 6px; }
+.drop-cap.d { line-height: 52%; text-indent: -37px; }
+.drop-cap.e { line-height: 30%; text-indent: 6px; }
+.drop-cap.f { line-height: 85%; text-indent: 3px; }
+.drop-cap.g { line-height: 31%; text-indent: 9px; }
+.drop-cap.h { line-height: 52%; text-indent: -40px; }
+.drop-cap.i { line-height: 57%; text-indent: 18px; }
+.drop-cap.j { line-height: 62%; text-indent: 18px; }
+.drop-cap.k { line-height: 25%; text-indent: -8px; }
+.drop-cap.l { line-height: 24%; text-indent: 0px; }
+.drop-cap.m { line-height: 34%; text-indent: -1px; }
+.drop-cap.n { line-height: 24%; text-indent: -2px; }
+.drop-cap.o { line-height: 30%; text-indent: 6px; }
+.drop-cap.p { line-height: 0%; text-indent: -44px; }
+.drop-cap.q { line-height: 0%; text-indent: -36px; }
+.drop-cap.r { line-height: 24%; text-indent: -2px; }
+.drop-cap.s { line-height: 28%; text-indent: 9px; }
+.drop-cap.t { line-height: 60%; text-indent: 8px; }
+.drop-cap.u { line-height: 21%; text-indent: 0px; }
+.drop-cap.v { line-height: 28%; text-indent: 9px; }
+.drop-cap.w { line-height: 27%; text-indent: -7px; }
+.drop-cap.x { line-height: 27%; text-indent: -13px; }
+.drop-cap.y { line-height: 27%; text-indent: -18px; }
+.drop-cap.z { line-height: 25%; text-indent: 12px; }
+
+small {
+	padding-right: 4em;
+	margin: 1em 0em 1em 0em;
+	display: block;
+}
+
+small, nav, h3, h4, h5, h6, h7, h8, h9 {
+	text-align: left;
+	hyphens: none;
+	
+	font-size: 11.5px;
+	font-family: arial, sans-serif;
+	line-height: 1.39em;
+	
+	text-shadow: none;
+}
+
+h3, h4, h5, h6, h7, h8, h9 {
+	margin: 17.6px 0px 0px 0px;
+}
+
+ul.breadcrumbs {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+
+ul.breadcrumbs li {
+	padding: 0px;
+	display: inline;
+	
+	white-space: nowrap;
+}
+
+ul.breadcrumbs li:after {
+	/*
+	margin: 0px 0.5px 0px 0.5px;
+	font-size: 1.2em;
+	*/
+	content:" > ";
+}
+
+ul.breadcrumbs li:last-child:after {
+	content: "";
+}
+
+ul.breadcrumbs a {
+	border: 0;
+	text-decoration: none;
+}
+
+a {
+	color: inherit;
+	
+	/*
+	border-bottom: dotted 1px gray;
+	text-decoration: none;
+	*/
+	
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: gray;
+}
+
+a:target {
+	outline: 0;
+	border: 0;
+}
+
+a.back {
+	font-weight: bold;
+	border-bottom: dotted 1px gray;
+	text-decoration: none;
+}
+
+a.button:active {
+	position: relative;
+	top: 1px;
+}
+
+a[href^="mailto:"] {
+	white-space: nowrap;
+}
+
+.link-list a:not(:hover) {
+	border: none;
+	text-decoration: none;
+}
+
+sup a:target, mark {
+	background-color: #D5D580;
+	background-image: url("../images/highlight.png");
+	background-repeat: repeat, repeat;
+	image-rendering: -moz-crisp-edges;
+}
+
+mark {
+	padding: 1px;
+}
+
+sup {
+	font-size: 0.7em;
+	font-style: normal;
+}
+
+sup a {
+	padding: 0px 2px 0px 2px;
+	
+	border: 0;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+img {
+	max-width: calc(100% - 2px);
+	margin: 0.5em 0em 0em 0em;
+	
+	background-color: #FFF;
+	border: solid 1px #000;
+}
+
+img + img {
+	margin-top: 1.5em;
+	/*margin-top: -6px;*/
+}
+
+
+
+a img {
+	display: block;
+}
+
+ul {
+	list-style: circle outside;
+	/*padding-left: 0px;*/
+}
+
+
+
+/* media queries */
+@media screen and (max-width: 1300px) { /*1016*/
+	:root {
+		--main-spacing: 50px;
+	}
+
+	main {
+		margin: 0px auto;
+		padding: 0px var(--main-spacing);
+	}
+}
+
+@media screen and (max-width: 700px) {
+	small {
+		text-align: left;
+		padding-right: 0em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	p {
+		text-justify: inter-word;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		--main-spacing: 20px;
+	}
+	
+	.drop-cap {
+		all: unset;
+	}
+	
+	span.no-break {
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	p {
+		text-align: left;
+	}
+}
