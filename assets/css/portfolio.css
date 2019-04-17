@@ -34,6 +34,8 @@ main, footer {
 footer {
 	text-align: left;
 	font-weight: bold;
+	
+	
 }
 
 header {
@@ -70,6 +72,10 @@ section:last-child {
 }
 
 .no-break {
+	white-space: nowrap;
+}
+
+.no-no-break {
 	white-space: nowrap;
 }
 
@@ -431,6 +437,10 @@ div#back a {
 	.inset-outer h1, .inset-outer h2, .inset-outer h3, .inset-outer p {
 		padding-left: 10vw;
 		padding-right: 10vw;
+	}
+	
+	.no-break {
+		white-space: normal;
 	}
 	
 }
