@@ -3,8 +3,8 @@
 	src: 
 		local('Franklin Gothic Demi Cond'), 
 		local('FranklinGothic-DemiCond'),
-        url('/assets/fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
-        url('/assets/fonts/FranklinGothic-DemiCond.woff') format('woff');
+        url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
+        url('../fonts/FranklinGothic-DemiCond.woff') format('woff');
 }
 
 :root {
