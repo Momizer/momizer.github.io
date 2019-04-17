@@ -20,6 +20,7 @@
 /* elements */
 body {
 	margin: 0px;
+	margin-top: 72px;
 }
 
 main {
@@ -39,21 +40,21 @@ hgroup a:not(:hover) {
 
 h1 {
 	margin: 0px 0px 0.5em 0px;
-	line-height: 1em;
+	line-height: 32px;
 	
 	max-width: 50%;
 	
 	font-family: "Franklin Gothic", sans-serif;
-	font-size: 1.4em;
+	font-size: 3em;
 	font-weight: normal;
 }
 
-h2 {
-	margin: 1.1em 0px 1.1em 0px;
+h2, h3, h4, h5, h6, h7, h8, h9 {
+	margin: 0em 0px 0em 0px;
 	line-height: 1em;
-	
-	font-size: 1em;
-	font-style: italic;
+}
+
+h2 {
 	font-weight: bold;
 }
 
@@ -81,10 +82,6 @@ body, small, nav, h2, h3, h4, h5, h6, h7, h8, h9 {
 	line-height: 1.39em;
 	
 	text-shadow: none;
-}
-
-h3, h4, h5, h6, h7, h8, h9 {
-	margin: 17.6px 0px 0px 0px;
 }
 
 ul.breadcrumbs {
@@ -179,6 +176,7 @@ img {
 	margin: 0.5em 0em 0em 0em;
 	
 	background-color: #FFF;
+	display: block;
 }
 
 img + img {

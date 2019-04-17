@@ -27,7 +27,7 @@
 ### IB Summative Exhibition
 ![Lost Information, CD Case](assets\images\portfolio\lost information\art-cd_case.png)
 ![Lost Information, Fat Idiot](assets\images\portfolio\lost information\art-fat_idiot.jpg)
-![Lost Information, GMS Vol. 2](assets\images\portfolio\lost information\art-gms_vol2)
+![Lost Information, GMS Vol. 2](assets\images\portfolio\lost information\art-gms_vol2.png)
 ![Lost Information, I Love You](assets\images\portfolio\lost information\art-i_love_you.png)
 ![Lost Information, Roadtrip Window](assets\images\portfolio\lost information\art-roadtrip_window.png)
 ![Lost Information, Water Reflection](assets\images\portfolio\lost information\art-water_reflection.png)
