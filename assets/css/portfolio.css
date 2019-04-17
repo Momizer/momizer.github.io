@@ -335,6 +335,32 @@ div#back a {
 	-webkit-text-stroke: 0.5px rgba(255,255,255,0.25);
 }
 
+.spacer {
+	padding-bottom: 54px;
+}
+	
+	
+.inset a:active {
+	opacity: 0.8;
+	transition: opacity 0ms;
+}
+
+.inset a:hover {
+	z-index: 1000;
+	margin: -1px;
+	border: 1px dashed #DDD;
+	outline: 10px solid rgba(255,255,255,1);
+	box-shadow: 0px 10px 20px black;
+}
+
+@media screen and (max-width: 1300px) {
+	
+	.inset-outer, .inset-outer.full-width {
+		margin: 0px -42px 42px -42px;
+	}
+	
+}
+
 @media screen and (max-width: 479px) {
 	
 	.work {
@@ -378,32 +404,22 @@ div#back a {
 	}
 	
 	.inset-outer, .inset-outer.full-width {
-		margin: 0px -10vw 0px -10vw;
+		margin-left: -10vw;
+		margin-right: -10vw;
 		width: calc(100% + 20vw + 3px);
 		
-		padding: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
 		box-shadow: 0px 0px 0px -1px #000,
 					0px 6px 30px 0px rgba(0,0,0,0.1),
 					0px 12px 120px -24px rgba(0,0,0,0.8),
 					0px 6px 15px 0px rgba(0,0,0,0.6);
 	}
 	
+	.inset-outer h1, .inset-outer h2, .inset-outer h3, .inset-outer p {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+	
 }
 
-.spacer {
-	padding-bottom: 54px;
-}
-	
-	
-.inset a:active {
-	opacity: 0.9;
-	transition: opacity 0ms;
-}
-
-.inset a:hover {
-	z-index: 1000;
-	margin: -1px;
-	border: 1px dashed #DDD;
-	outline: 10px solid rgba(255,255,255,1);
-	box-shadow: 0px 10px 20px black;
-}
