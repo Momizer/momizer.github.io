@@ -452,6 +452,11 @@ div#back a {
 		white-space: normal;
 	}
 	
+	.inset a:hover {
+		outline: 0;
+		box-shadow: 0px 5px 20px black;
+	}
+	
 }
 
 @media (any-hover: hover) {
