@@ -38,8 +38,8 @@ hgroup a:not(:hover) {
 	border: none;
 }
 
-h1 {
-	margin: 0px 0px 0.5em 0px;
+h1, h2 {
+	margin: 72px 0px 0.5em 0px;
 	line-height: 32px;
 	
 	max-width: 50%;
@@ -52,18 +52,14 @@ h1 {
 h2, h3, h4, h5, h6, h7, h8, h9 {
 	margin: 0em 0px 0em 0px;
 	line-height: 1em;
-}
-
-h2 {
-	font-weight: bold;
+	
+	font-weight: normal;
 }
 
 p, ul:not(.breadcrumbs) {
 	margin: 1em 0px 1em 0px;
 	line-height: inital;
 	
-	text-align: justify;
-	text-justify: inter-character;
 	hyphens: auto;
 }
 
@@ -212,12 +208,6 @@ ul {
 	small {
 		text-align: left;
 		padding-right: 0em;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	p {
-		text-justify: inter-word;
 	}
 }
 

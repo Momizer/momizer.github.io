@@ -2,8 +2,8 @@
 ---
 
 # Saba Johnson
-## Email: [saba.johnson@gmail.com](mailto:saba.johnson@gmail.com)
-## Phone: [+1 (385) 236-6197](tel:1-385-236-6197)
+### Email: [saba.johnson@gmail.com](mailto:saba.johnson@gmail.com)
+### Phone: [+1 (385) 236-6197](tel:1-385-236-6197)
 
 
 
@@ -15,9 +15,9 @@
 ### Visual Identity and Instagram Ads
 ![Flicks Apparel Logo](assets\images\portfolio\flicks apparel\flicks apparel logo tick.png)
 ![Flicks Apparel Ad Square](assets\images\portfolio\flicks apparel\all ad square.png)
-![Flicks Apparel Ad Square](assets\images\portfolio\new arrivals square.png)
-![Flicks Apparel Ad Square](assets\images\portfolio\riverdale giveaway.png)
-![Flicks Apparel Ad Square](assets\images\portfolio\stickers ad.png)
+![Flicks Apparel Ad Square](assets\images\portfolio\flicks apparel\new arrivals square.png)
+![Flicks Apparel Ad Square](assets\images\portfolio\flicks apparel\riverdale giveaway.png)
+![Flicks Apparel Ad Square](assets\images\portfolio\flicks apparel\stickers ad.png)
 
 ## General Saves
 ### Visual Identity and Product Cleanup
@@ -46,8 +46,8 @@
 ## Yeezus Carts
 ### Visual Identity for Website and Online Presence
 ![Yeezus Carts Avatar](assets\images\portfolio\yeezus carts\yeezus carts avatar.png)
-![Yeezus Carts Day Banner](assets\images\portfolio\yeezus carts\banner interlace day.png)
-![Yeezus Carts Night Banner](assets\images\portfolio\yeezus carts\banner interlace night.png)
+![Yeezus Carts Day Banner](assets\images\portfolio\yeezus carts\yeezus carts banner interlace day.png)
+![Yeezus Carts Night Banner](assets\images\portfolio\yeezus carts\yeezus carts banner interlace night.png)
 
 ## MPAA Infographic
 ### Personal Project
