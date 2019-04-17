@@ -2,10 +2,17 @@
 
 cd %~dp0
 
-set /p commit-comment="Enter commit comment: "
+ECHO Tracking all files...
 git add .
-git commit -a -m "%commit-comment%"
-git push -u origin master
+ECHO. 
 
+ECHO Committing all files with comment...
+set /p commit-comment="Enter commit comment: "
+git commit -a -m "%commit-comment%"
+ECHO. 
+
+ECHO Pushing all files to GitHub repository...
+git push -u origin master
 ECHO.
+
 PAUSE

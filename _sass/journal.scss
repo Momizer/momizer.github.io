@@ -55,9 +55,14 @@
 body {
 	margin: 0px;
 	
-	font-family: "Kelvinch", serif;
-	font-size: 1em;
-	font-variant-ligatures: no-common-ligatures;
+	text-align: left;
+	hyphens: none;
+	
+	font-size: 11.5px;
+	font-family: arial, sans-serif;
+	line-height: 1.39em;
+	
+	text-shadow: none;
 }
 
 main {
