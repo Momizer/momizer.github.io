@@ -61,6 +61,18 @@ section:last-child {
 	white-space: nowrap;
 }
 
+#introduction h1 {
+	margin-bottom: 0.5em;
+}
+
+#introduction h2 {
+	margin-bottom: 0.6em;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
 #backplate {
 	width: 100%;
 	height: 50vh;
