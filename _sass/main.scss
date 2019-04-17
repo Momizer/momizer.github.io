@@ -19,13 +19,12 @@
 
 /* elements */
 body {
-	margin: 0px auto;
-	margin-top: 72px;
+	margin: 72px 0px 0px 0px;
 }
 
 main {
 	max-width: var(--main-width);
-	margin: 0px 0px 0px var(--main-spacing); 
+	margin: 0px auto 0px auto; 
 	padding: 0px;
 }
 
@@ -38,7 +37,7 @@ hgroup a:not(:hover) {
 	border: none;
 }
 
-h1, h2 {
+h1 {
 	margin: 72px 0px 0.5em 0px;
 	line-height: 32px;
 	
@@ -55,6 +54,7 @@ h2, h3, h4, h5, h6, h7, h8, h9 {
 }
 
 h2 {
+	margin-top: 72px;
 	font-weight: bold;
 }
 
@@ -173,7 +173,7 @@ img {
 	max-width: 100%;
 	margin: 0.5em 0em 0em 0em;
 	
-	background-color: #FFF;
+	background-color: #CCC;
 	display: block;
 }
 
