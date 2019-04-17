@@ -55,8 +55,8 @@ section:last-child {
 }
 
 #introduction {
-	margin-top: 27vh;
-	margin-bottom: 27vh;
+	margin-top: 25vh;
+	margin-bottom: 25vh;
 }
 
 #introduction a {
@@ -179,7 +179,7 @@ img {
 	transition: opacity 200ms, filter 200ms;
 }
 
-.inset:hover a img:not(:hover) {
+.inset:hover > a img:not(:hover) {
 	opacity: 0.2;
 	filter: grayscale(100%) contrast(150%);
 	transition: opacity 200ms, filter 200ms;
@@ -334,8 +334,9 @@ a {
 	color: blue;
 }
 
-a:hover {
+a:hover, a:focus {
 	text-decoration: underline;
+	outline: none;
 }
 
 div#back {
@@ -356,19 +357,27 @@ div#back a {
 .spacer {
 	padding-bottom: 54px;
 }
-	
-	
-.inset a:active {
-	opacity: 0.8;
-	transition: opacity 0ms;
+
+.inset a:focus {
+	z-index: 1000	;
+	margin: -1px;
+	border: 1px dashed #DDD;
+	outline: 0;
+	box-shadow: 0px 5px 20px black;
 }
 
 .inset a:hover {
-	z-index: 1000;
+	z-index: 2000;
 	margin: -1px;
 	border: 1px dashed #DDD;
 	outline: 10px solid rgba(255,255,255,1);
 	box-shadow: 0px 10px 20px black;
+}
+
+.inset a:active {
+	opacity: 0.8;
+	transition: opacity 0ms;
+	filter: brightness(80%);
 }
 
 @media screen and (max-width: 1300px) {
@@ -379,7 +388,7 @@ div#back a {
 	
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 600px) {
 	
 	.work {
 		width: calc( (100%/4) - 36px);
@@ -445,3 +454,9 @@ div#back a {
 	
 }
 
+@media (any-hover: hover) {
+	.inset a:hover {
+		outline: 0;
+		box-shadow: 0px 5px 20px black;
+	}
+}
