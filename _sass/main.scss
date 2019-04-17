@@ -13,13 +13,13 @@
 :root {
 	--main-width: 800px;
 	--main-spacing: 105px;
-	--body-width: calc(100vw - (var(--main-spacing) * 2));
+	--body-width: var(--main-spacing);
 }
 
 
 /* elements */
 body {
-	margin: 0px;
+	margin: 0px auto;
 	margin-top: 72px;
 }
 
@@ -47,10 +47,14 @@ h1, h2 {
 	font-weight: normal;
 }
 
-h3, h4, h5, h6, h7, h8, h9 {
+h2, h3, h4, h5, h6, h7, h8, h9 {
 	margin: 0em 0px 0em 0px;
 	line-height: 1em;
 	
+	font-weight: normal;
+}
+
+h2 {
 	font-weight: bold;
 }
 
@@ -67,7 +71,7 @@ small {
 	display: block;
 }
 
-body, small, nav, h3, h4, h5, h6, h7, h8, h9 {
+body, small, nav, h2 h3, h4, h5, h6, h7, h8, h9 {
 	text-align: left;
 	hyphens: none;
 	
