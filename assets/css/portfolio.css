@@ -11,6 +11,19 @@
 	--main-width: 800px;
 }
 
+::-moz-selection { background: blue; color: white; text-shadow: none; }
+::selection { background: blue; color: white; text-shadow: none; }
+
+.inset-outer *::-moz-selection { background-color: white; color: black; }
+.inset-outer *::selection { background-color: white; color: black; }
+
+img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    }
+
 body {
 	margin: 0px 0px 72px 0px;
 	
@@ -173,6 +186,28 @@ img {
 	);
 	
 	transition: opacity 1s, filter 1s;
+}
+
+a.reveal {
+	max-height: 565px;
+	mask-image: linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 16%, rgba(0,0,0,1) 100%);
+	transition: max-height 50ms;
+	
+	position: relative;
+}
+
+a.reveal:hover {
+	max-height: 602px;
+	mask-image: none;
+	transition: max-height 50ms;
+}
+
+a.reveal:before {
+	content: "Click to Expand";
+	padding: 0.5em;
+	display: block;
+	background-color: #DDD;
+	outline: 1px dashed gray;
 }
 
 .inset:hover * {
@@ -359,7 +394,7 @@ div#back a {
 }
 
 .inset a:focus {
-	z-index: 1000	;
+	z-index: 1000;
 	margin: -1px;
 	border: 1px dashed #DDD;
 	outline: 0;
@@ -372,6 +407,7 @@ div#back a {
 	border: 1px dashed #DDD;
 	outline: 10px solid rgba(255,255,255,1);
 	box-shadow: 0px 10px 20px black;
+	position: relative;
 }
 
 .inset a:active {
@@ -457,11 +493,32 @@ div#back a {
 		box-shadow: 0px 5px 20px black;
 	}
 	
+	.inset-outer article:not(:first-child) h3 {
+		margin-top: 2em;
+	}
+	
+	a.reveal:hover {
+		max-height: 565px;
+		mask-image: none;
+	}
+	
+	a.reveal:before {
+		content: "Tap to Expand";
+	}
+	
+	.inset .preview, .inset .preview.odd, .inset .preview.long, .inset .preview.half {
+		width: 100%;
+	}
+	
 }
 
 @media (any-hover: hover) {
 	.inset a:hover {
 		outline: 0;
 		box-shadow: 0px 5px 20px black;
+	}
+	
+	a.reveal:before {
+		content: "Tap to Expand";
 	}
 }
