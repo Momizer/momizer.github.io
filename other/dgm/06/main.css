@@ -8,7 +8,7 @@ body {
 	
 	counter-reset: source;
 	
-	color: #black;
+	color: black;
 	background-color: rgb(250,250,250);
 }
 
@@ -225,8 +225,8 @@ blockquote:after, blockquote.en:after {
 }
 
 footer {
-	max-width: calc( var(--main-width) * 0.6);
-	margin-top: calc( 2em * 2 );
+	max-width: 400px;
+	margin-top: 4em;
 	margin-bottom: 200px;
 	
 	clear: both;
