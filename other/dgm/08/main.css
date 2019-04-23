@@ -1,0 +1,439 @@
+body {
+	font-family: 'PT Sans Caption', sans-serif;
+	font-size: 12px;
+	line-height: 1.25em;
+	
+	counter-reset: source;
+	
+	color: black;
+	background-color: white;
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.container {
+	max-width: 600px;
+	min-width: 200px;
+	margin: 40px 0px 0px 10vw;
+	padding: 20px;
+	background-color: white;
+	
+	border: 1px solid black;
+	
+	margin-bottom: 200px;
+	box-shadow: 5px 10px 10px -10px black;
+}
+
+main {
+	clear: both;
+}
+
+p {
+	font-size: 12px;
+}
+
+/* any paragraph after the first in its parent gets an indent */
+p + p:not(:first-of-type) {
+	text-indent: 1em;
+}
+
+h1, h2 {
+	margin-top: 0px;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2, h3, h4, h5, h6, h7, h8, h9 {
+	font-size: 12px;
+}
+
+/* any h2 that is in front of an element that is NOT an h1 gains a margin */
+*:not(h1) + h2,
+*:not(h1) + h3,
+*:not(h1) + h4,
+*:not(h1) + h5,
+*:not(h1) + h6,
+*:not(h1) + h7,
+*:not(h1) + h8,
+*:not(h1) + h9,      
+h1 {
+	margin-top: 2em;
+}
+
+
+
+
+ul, ol {
+	margin-top: 0px;
+	padding-top: 0px;
+	list-style-position: outside;
+	padding-left: calc( 2em + 1ch );
+}
+
+ul {
+	list-style-type: square;
+}
+
+ol {
+	list-style-type: upper-roman;
+}
+
+nav {
+	margin-bottom: calc( 2em * 3.5 );
+}
+
+nav ul, nav ol {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+nav li {
+	float: left;
+	position: relative;
+	top: 7px;
+	/* float keeps getting rid of my margins, wouldn't display: inline be better? */
+}
+
+nav li a {
+	color: black;
+	text-decoration: none;
+
+	background-color: #C0C0C0;
+	border: 1px outset #FFF;
+	outline: 1px outset #000;
+
+	padding: 5px 6px;
+	margin-right: 5px;
+	display: inline;
+}
+
+nav li a:hover {
+	background-color: #D0D0D0;
+	color: black;
+}
+
+nav li a:active, nav li a:target, nav li a.active {
+	padding: 6px 6px 4px 6px;
+	
+	background-color: #AAA;
+	border: 1px inset #C0C0C0;
+	outline: 1px inset #000;
+	
+	position: relative;
+	top: 1px;
+}
+
+ol {
+	list-style-image: url("smile.png");
+}
+
+main ul {
+	list-style-image: url("frown.png");
+}
+
+
+
+a {
+	color: #3900B2;
+}
+
+a:hover {
+	color: #B2AD61;
+}
+
+
+
+
+dl dt {
+	margin-top: 2em;
+	font-style: oblique;
+	text-decoration: underline;
+}
+
+dd {
+	margin-left: 2em;
+}
+
+dl.sources dd:before {
+	counter-increment: source;
+	content: counter(source) ".";
+	
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+	
+	
+
+img {
+	width: 100%;
+	outline: 1px solid black;
+	box-shadow: 5px 5px 10px -5px gray;
+}	
+
+figure {
+	margin: 0px 0px 2em 0px;
+	width: 40%;
+}
+
+.side {
+	float: right;
+	margin: 0em 0em 2em 2em;
+}
+
+.no-border {
+	border: none;
+	outline: none;
+}
+
+body.gallery {
+	max-width: 100%;
+	margin-right: 100px;
+}
+
+.gallery main {
+	width: 100%
+}
+
+.gallery .images {
+	margin: -2em -3em;
+	display: inline-block;
+}
+
+.gallery img {
+	display: block;
+}
+
+.gallery figure {
+	margin: 2em 3em;
+	max-width: 300px;
+	float: left;
+	
+	border: 1px solid black;
+}
+
+.gallery figcaption {
+	padding: 2px 4px 2px 4px;
+	text-align: center;
+	
+	background-color: black;
+	color: #FFF019;
+}
+
+.no-display {
+	display: none;
+}
+
+	
+
+
+blockquote {
+	margin-left: 2em;
+	font-style: oblique;
+	margin-right: 0px;
+}
+
+/* blockquote pretty symbols, "en" denotes ENGLISH quotes. */
+blockquote:before, blockquote.en:before {
+	content: "“";
+}
+
+blockquote:after, blockquote.en:after {
+	content: "”";
+}
+
+footer {
+	max-width: 400px;
+	margin-top: 4em;
+	
+	clear: both;
+	
+	color: gray;
+}
+
+footer .date {
+	color: black;
+}
+
+/*
+footer .course {
+	border: 1px solid gray;
+	border-radius: 2px;
+	padding: 1px 2px 0px 2px;
+	background-color: #FAFAFA;
+	box-shadow: 1px 1px 0px black;
+}
+*/
+
+
+/* REMOVE 000WEBHOST WATERMARK */
+footer + div * { 
+	display: none;
+}
+
+fieldset {
+	margin: 20px 0px;
+	padding: 17px 20px 20px 20px;
+	
+	border: 1px dashed gray;
+	border-radius: 0px;
+	max-width: 50%;
+	
+	border-radius: 10px;
+	
+	box-shadow: inset 1px 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+fieldset:last-child {
+	margin-bottom: 0px;
+}
+
+fieldset legend {
+	text-shadow: 0px 1px 0px white, 0px 2px 1px white;
+}
+
+fieldset label {
+	display: block;
+	margin-top: 20px;
+}
+
+fieldset label:first-of-type {
+	margin-top: 0px;
+}
+
+fieldset label span {
+	padding-right: 20px;
+}
+
+fieldset label input {
+	max-width: 400px;
+	border-radius: 5px;
+}
+
+fieldset label input:not([type="checkbox"]):not([type="radio"]) {
+	display: block;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	margin-top: 0;
+}
+
+fieldset.onboarding {
+	background-color: rgba(64,0,0,0.05);
+}
+
+fieldset.onboarding * {
+	color: #C00;
+}
+
+fieldset.shipping * {
+	color: #3900B2;
+}
+
+textarea { 
+	resize: vertical; 
+}
+
+input[type="submit"] {
+	width: 50%;
+	background-color: #FFF019;
+	height: 4em;
+	
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+input[type="submit"]:hover {
+	background-color: #CCC019;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+	position: relative;
+	bottom: 2px;
+}
+
+header {
+	background-image: url("hatch.png");
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.google-maps {
+	overflow: hidden;
+	background:none;
+	height: 500px;
+	width: 100%;
+	
+	background-color: #CCC;
+}
+
+.map {
+	position: relative;
+	text-align: right;
+	height: 500px; 
+	width: 100%;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+	color: white;
+	background-color: #CCC019;
+	text-shadow: 0px 1px 1px black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	font-size: 1.3em;
+}
+
+td {
+	border-collapse: collapse;
+}
+
+th, td {
+	padding-left: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #EEE;
+}
+
+tr:hover {
+	background-color: gray;
+	color: white;	
+}
+
+@media only screen and (max-width: 800px) {
+	
+	body {
+		margin: 40px;
+	}
+	
+	.container {
+		margin: 0px;
+	}
+	
+	nav li {
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 1px;
+		display: block;
+		width: 100%;
+		float: none;
+	}
+	
+	nav li a {
+		width: 97%;
+		display: block;
+		
+		border-radius: 10px;
+		outline: none;
+	}
+	
+	nav li a.active {
+		outline: none;
+	}
+}
