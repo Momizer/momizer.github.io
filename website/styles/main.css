@@ -1,0 +1,61 @@
+/* Fonts */
+
+
+
+/* Variables */
+:root {
+	--main-max-width: 800px;
+	--main-vertical-margin: 50px;
+	
+	--root-font-family: Arial, sans-serif;
+	--root-font-size: 12px;
+	
+	--body-font-family: var(--root-font-family);
+	--body-font-size: var(--root-font-size);
+	
+	--body-background-color: white;
+	
+	font-family: var(--root-font-family);
+	font-size: var(--root-font-size);
+}
+
+/* Elements */
+body {
+	margin: 0px;
+	
+	font-family: var(--body-font-family);
+	font-size: var(--body-font-size);
+	
+	background-color: var(--body-background-color);
+}
+
+main {
+	max-width: var(--main-max-width);
+	margin: var(--main-vertical-margin) auto;
+}
+
+.card {
+	--card-vertical-spacing: 1rem;
+	
+	width: 100%;
+	min-height: 100px;
+	margin-top: var(--card-vertical-spacing);
+	margin-bottom: var(--card-vertical-spacing);
+	
+	background-color: #EEE;
+	
+	cursor: zoom-in;
+}
+
+@media (any-hover: hover) {
+	.card:active {
+		--screen-main-remainder: calc(100vw - var(--main-max-width));
+		--card-full-view-margin: calc(var(--screen-main-remainder) * -0.5);
+		
+		width: 100vw;
+		margin-left: var(--card-full-view-margin);
+		margin-right: var(--card-full-view-margin);
+		
+		cursor: zoom-out;
+	}
+}
