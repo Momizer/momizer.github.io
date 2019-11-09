@@ -24,7 +24,7 @@ body {
 .logo {
 	width: 100%;
 	height: 100%;
-	max-height: var(--logo-size-max);
+	max-height: unset;
 	
 	position: relative;
 	top: 50%;
@@ -59,7 +59,7 @@ body {
 }
 
 .legal {
-	width: auto;
+	width: 100%;
 	min-width: var(--logo-size-min);
 	
 	margin-left: auto;
@@ -75,7 +75,7 @@ body {
 	cursor: text;
 }
 
-@media (max-aspect-ratio: 1/1) or (max-width: 300px) {
+@media (max-aspect-ratio: 1/1) {
 	.screen {
 		--logo-size: 80vmin;
 		
@@ -88,6 +88,12 @@ body {
 	
 	.cradle {
 		min-height: var(--logo-size-min);
+	}
+	
+	.logo {
+		height: auto;
+		top: unset;
+		transform: unset;
 	}
 	
 	.extra {
