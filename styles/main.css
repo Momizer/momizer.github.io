@@ -7,8 +7,8 @@
 	--main-max-width: 800px;
 	--main-vertical-margin: 50px;
 	
-	--root-font-family: Arial, sans-serif;
-	--root-font-size: 12px;
+	--root-font-family: arial, sans-serif;
+	--root-font-size: 11px;
 	
 	--body-font-family: var(--root-font-family);
 	--body-font-size: var(--root-font-size);
@@ -21,6 +21,7 @@
 
 /* Elements */
 body {
+	margin: 0px;
 	background-color: var(body-background-color);
 }
 
