@@ -29,6 +29,9 @@ body {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+	
+	text-align: center;
+	color: transparent;
 }
 
 .cradle {
