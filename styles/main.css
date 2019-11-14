@@ -19,6 +19,10 @@
 	font-size: var(--root-font-size);
 }
 
+:target {
+	--color-highlight: yellow;
+}
+
 /* Elements */
 body {
 	margin: 0px;
@@ -27,5 +31,143 @@ body {
 
 main {
 	max-width: var(--main-max-width);
-	margin: 0 auto;
+	margin: var(--main-vertical-margin) auto;
+}
+
+main.half > * {
+	max-width: calc(var(--main-max-width) * 0.5);
+}
+
+a {
+	--color-link-link: blue;
+	--color-link-hover: var(--color-link-link);
+	--color-link-active: #888;
+	--color-link-visited: var(--color-link-link);
+	
+	--color-link: var(--color-link-link);
+	
+	color: var(--color-link);
+	text-decoration: none;
+}
+
+a:hover {
+	--color-link: var(--color-link-hover);
+	text-decoration: underline;
+}
+
+a:active {
+	--color-link: var(--color-link-active);
+}
+
+a.silent {
+	color: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
+}
+
+a.filepath {
+	--color-link-filepath-link: #AAA;
+	--color-link-filepath-hover: blue;
+	--color-link-filepath-active: #888;
+	
+	--color-link-filepath: var(--color-link-filepath-link);
+
+	--filepath-padding: 0.3em;
+
+	padding: var(--filepath-padding);
+	font-weight: inherit;
+	border: 1px dotted var(--color-link-filepath);
+	border-radius: 2px;
+	
+	color: var(--color-link-filepath);
+	text-decoration: none;
+}
+
+h1 a.filepath:not(:first-child) {
+	margin-left: var(--filepath-padding);
+}
+
+a.filepath:hover {
+	--color-link-filepath: var(--color-link-filepath-hover);
+	
+	border-style: solid;
+	z-index: 10;
+}
+
+a.filepath:active {
+	--color-link-filepath: var(--color-link-filepath-active);
+}
+
+h1 {
+	margin: 0.5rem 0;
+	
+	font-size: var(--body-font-size);
+	font-weight: bold;
+}
+
+h1:target * {
+	background-color: var(--color-highlight);
+}
+
+article, hgroup {
+	margin-bottom: 2rem;
+}
+
+hgroup h1 {
+	--hroup-h1-scaleX: 1.25;
+	
+	width: calc(100% / var(--hroup-h1-scaleX));
+	
+	font-size: 17px;
+	font-family: Franklin Gothic, Arial, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	
+	transform: scaleX(var(--hroup-h1-scaleX));
+	transform-origin: left;
+}
+
+p {
+	margin: 0 0 0.5em 0;
+}
+
+
+
+/* Custom */
+.creative-commons {
+	--creative-commons-spacing: 0.1em;
+	
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.creative-commons * {
+	vertical-align: middle;
+}
+
+.creative-commons img {
+	width: 1rem;
+	padding: 0 var(--creative-commons-spacing);
+	margin: 0;
+	display: inline;
+	
+	cursor: text;
+}
+
+.creative-commons img:first-of-type {
+	padding-left: 0;
+}
+
+.creative-commons img:last-of-type {
+	padding-right: 0;
+}
+
+.creative-commons abbr {
+	font-weight: bold;
+}
+
+.creative-commons img + abbr, .creative-commons abbr + img {
+	margin-left: calc(var(--creative-commons-spacing) * 2);
 }
