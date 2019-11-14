@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 	<meta charset=utf-8>
@@ -5,8 +8,6 @@
 	
 	<title>Copyright</title>
 </head>
-
-
 
 <body>
 	<main class="half">
@@ -29,3 +30,5 @@
 		?>
 	</main>
 </body>
+
+</html>
