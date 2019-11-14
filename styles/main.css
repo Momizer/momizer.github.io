@@ -59,48 +59,80 @@ a:active {
 	--color-link: var(--color-link-active);
 }
 
-a.silent {
+a.silent, .path-info a {
 	color: inherit;
 	font-family: inherit;
 	font-weight: inherit;
 	text-decoration: inherit;
 }
 
-a.filepath {
+.filepath {
 	--color-link-filepath-link: #AAA;
 	--color-link-filepath-hover: blue;
+	--color-link-filepath-hover-inactive: #AAF;
 	--color-link-filepath-active: #888;
-	
 	--color-link-filepath: var(--color-link-filepath-link);
 
 	--filepath-padding: 0.3em;
+	--filepath-border-width: 1px;
 
 	padding: var(--filepath-padding);
+	margin: 0px;
+	display: inline;
+	
 	font-weight: inherit;
-	border: 1px dotted var(--color-link-filepath);
-	border-radius: 2px;
-	
-	color: var(--color-link-filepath);
+	white-space: normal;
 	text-decoration: none;
+	line-height: calc(1.5em + var(--filepath-padding));
+
+	color: var(--color-link-filepath);
+	border: var(--filepath-border-width) dotted var(--color-link-filepath);
+	border-radius: 2px/2px;	
+	box-decoration-break: clone;
 }
 
-h1 a.filepath:not(:first-child) {
-	margin-left: var(--filepath-padding);
-}
-
-a.filepath:hover {
-	--color-link-filepath: var(--color-link-filepath-hover);
-	
+.filepath:hover, a:hover ~ .filepath {
+	--color-link-filepath: var(--color-link-filepath-hover-inactive);
 	border-style: solid;
-	z-index: 10;
 }
 
-a.filepath:active {
+.filepath.single:hover, a:hover ~ .filepath.single {
+	--color-link-filepath: var(--color-link-filepath-hover);
+}
+
+.filepath:active {
 	--color-link-filepath: var(--color-link-filepath-active);
 }
 
+.filepath a {
+	--filepath-link-hitbox: calc(var(--filepath-padding) + var(--filepath-border-width));
+	
+	margin: calc(var(--filepath-link-hitbox) * -1);
+	padding: var(--filepath-border-width) var(--filepath-link-hitbox);
+	display: inline-block;
+	
+	color: var(--color-link-filepath);
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.filepath a:hover, a:hover ~ .filepath:not(.single) a:last-child {
+	color: var(--color-link-filepath-hover);
+}
+
+.filepath:hover a:not(:hover) {
+	color: var(--color-link-filepath-hover-inactive);
+}
+
+.path-info > a:not([class]) {
+	padding: var(--h1-margin-vertical) 0;
+	line-height: 1.8em;
+}
+
 h1 {
-	margin: 0.5rem 0;
+	--h1-margin-vertical: 0.5rem;
+	
+	margin: var(--h1-margin-vertical) 0;
 	
 	font-size: var(--body-font-size);
 	font-weight: bold;
@@ -117,7 +149,7 @@ article, hgroup {
 hgroup h1 {
 	--hroup-h1-scaleX: 1.25;
 	
-	width: calc(100% / var(--hroup-h1-scaleX));
+	max-width: calc(100% / var(--hroup-h1-scaleX));
 	
 	font-size: 17px;
 	font-family: Franklin Gothic, Arial, sans-serif;
@@ -131,6 +163,87 @@ hgroup h1 {
 
 p {
 	margin: 0 0 0.5em 0;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+figure.overlay, figure.overlay.bottom {
+	justify-content: flex-end;
+}
+
+figure.overlay.top {
+	justify-content: flex-start;
+}
+
+figure > * {
+	display: flex;
+}
+
+figure img {
+	--figure-img-border-width: 1px;
+	
+	width: calc(100% - var(--figure-img-border-width));
+	border: var(--figure-img-border-width) solid black;
+	margin-bottom: calc(var(--figure-img-border-width) * -1);
+}
+
+a > img:only-child {
+	cursor: zoom-in;
+}
+
+figure a:focus {
+	outline: none;
+}
+
+figure.overlay figcaption {
+	--padding-sides: 2em;
+	
+	width: auto;
+	height: auto;
+	
+	padding: 1em 1em;
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	transform: translateY(0%);
+	
+	color: white;
+	text-shadow: 1px 1px 0px black;
+	
+	cursor: text;
+}
+
+figure.overlay.dot:not(.right) figcaption:before {
+	content:"• ";
+}
+
+figure.overlay figcaption, figure.overlay.left figcapion {
+	align-self: flex-start;
+}
+
+figure.overlay.right figcaption {
+	align-self: flex-end;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.break-spaces {
+	white-space: break-spaces;
+}
+
+.no-select {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 
@@ -149,19 +262,11 @@ p {
 
 .creative-commons img {
 	width: 1rem;
-	padding: 0 var(--creative-commons-spacing);
-	margin: 0;
+	padding: 0;
+	margin: 0 var(--creative-commons-spacing);
 	display: inline;
 	
 	cursor: text;
-}
-
-.creative-commons img:first-of-type {
-	padding-left: 0;
-}
-
-.creative-commons img:last-of-type {
-	padding-right: 0;
 }
 
 .creative-commons abbr {
