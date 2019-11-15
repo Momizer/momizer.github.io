@@ -4,16 +4,28 @@
 
 /* Variables */
 :root {
+	/* Colors*/
+	--color-body-background-color: white;
+	
+	--color-link-filepath-link: #AAA;
+	--color-link-filepath-hover: blue;
+	--color-link-filepath-hover-inactive: #AAF;
+	--color-link-filepath-active: #888;
+	--color-link-filepath: var(--color-link-filepath-link);
+	
+	/* Metrics */
 	--main-max-width: 800px;
 	--main-vertical-margin: 50px;
+	--main-horizontal-padding: 15px;
 	
 	--root-font-family: arial, sans-serif;
 	--root-font-size: 11px;
 	
 	--body-font-family: var(--root-font-family);
 	--body-font-size: var(--root-font-size);
-	
-	--body-background-color: white;
+
+	--filepath-padding: 0.3em;
+	--filepath-border-width: 1px;
 	
 	font-family: var(--root-font-family);
 	font-size: var(--root-font-size);
@@ -25,17 +37,16 @@
 
 /* Elements */
 body {
+	--color-background: var(--color-body-background-color);
+	
 	margin: 0px;
-	background-color: var(body-background-color);
+	background-color: var(--color-background);
 }
 
 main {
 	max-width: var(--main-max-width);
 	margin: var(--main-vertical-margin) auto;
-}
-
-main.half > * {
-	max-width: calc(var(--main-max-width) * 0.5);
+	padding: 0 var(--main-horizontal-padding);
 }
 
 a {
@@ -59,28 +70,30 @@ a:active {
 	--color-link: var(--color-link-active);
 }
 
-a.silent, .path-info a {
+a.silent, .path-info .anchor {
 	color: inherit;
 	font-family: inherit;
 	font-weight: inherit;
 	text-decoration: inherit;
 }
 
+a:not(.silent)[href*="//"]:after {
+	display: inline;
+	line-height: 0;
+	content:" 🡥";
+	vertical-align: middle;
+}
+
+.path-info .info {
+	display: inline-block;
+}
+
 .filepath {
-	--color-link-filepath-link: #AAA;
-	--color-link-filepath-hover: blue;
-	--color-link-filepath-hover-inactive: #AAF;
-	--color-link-filepath-active: #888;
-	--color-link-filepath: var(--color-link-filepath-link);
-
-	--filepath-padding: 0.3em;
-	--filepath-border-width: 1px;
-
 	padding: var(--filepath-padding);
 	margin: 0px;
 	display: inline;
 	
-	font-weight: inherit;
+	font-weight: bold;
 	white-space: normal;
 	text-decoration: none;
 	line-height: calc(1.5em + var(--filepath-padding));
@@ -89,26 +102,17 @@ a.silent, .path-info a {
 	border: var(--filepath-border-width) dotted var(--color-link-filepath);
 	border-radius: 2px/2px;	
 	box-decoration-break: clone;
-}
-
-.filepath:hover, a:hover ~ .filepath {
-	--color-link-filepath: var(--color-link-filepath-hover-inactive);
-	border-style: solid;
-}
-
-.filepath.single:hover, a:hover ~ .filepath.single {
-	--color-link-filepath: var(--color-link-filepath-hover);
-}
-
-.filepath:active {
-	--color-link-filepath: var(--color-link-filepath-active);
+	
+	background-color: var(--color-background);
+	
+	/* box-shadow: 0.75px 1px var(--color-link-filepath); */
 }
 
 .filepath a {
 	--filepath-link-hitbox: calc(var(--filepath-padding) + var(--filepath-border-width));
 	
-	margin: calc(var(--filepath-link-hitbox) * -1);
-	padding: var(--filepath-border-width) var(--filepath-link-hitbox);
+	margin: calc(var(--filepath-link-hitbox) * -1) 0;
+	padding: var(--filepath-border-width) 0;
 	display: inline-block;
 	
 	color: var(--color-link-filepath);
@@ -116,30 +120,77 @@ a.silent, .path-info a {
 	text-transform: lowercase;
 }
 
-.filepath a:hover, a:hover ~ .filepath:not(.single) a:last-child {
+.filepath a:focus {
+	outline: none;
+	text-decoration: underline;
+}
+
+.filepath a:focus:hover {
+	text-decoration-color: var(--color-link-filepath);
+}
+
+.filepath:not(:hover) a:focus {
 	color: var(--color-link-filepath-hover);
 }
 
-.filepath:hover a:not(:hover) {
-	color: var(--color-link-filepath-hover-inactive);
+.path-info a.anchor:hover ~ .info .filepath a:focus:not(:last-of-type) {
+	color: inherit;	
 }
 
-.path-info > a:not([class]) {
-	padding: var(--h1-margin-vertical) 0;
-	line-height: 1.8em;
+.filepath a:first-of-type {
+	padding-left: var(--filepath-link-hitbox);
+	margin-left: calc(var(--filepath-link-hitbox) * -1);
+}
+
+.filepath a:last-of-type {
+	padding-right: var(--filepath-link-hitbox);
+	margin-right: calc(var(--filepath-link-hitbox) * -1);
+}
+
+.filepath a:hover, 
+.path-info a.anchor:hover ~ .info a:last-of-type, 
+.path-info a.anchor:focus ~ .info a:last-of-type {
+	color: var(--color-link-filepath-hover);
+}
+
+.filepath:hover, 
+.filepath:focus-within,
+.path-info a.anchor:hover ~ .info .filepath, 
+.path-info a.anchor:focus ~ .info .filepath {
+	--color-link-filepath: var(--color-link-filepath-hover-inactive);
+	border-style: solid;
+}
+
+.filepath.single:hover, 
+.path-info a.anchor:hover ~ .info .filepath.single, 
+.path-info a.anchor:focus ~ .info .filepath.single {
+	--color-link-filepath: var(--color-link-filepath-hover);
+}
+
+.filepath:active, .filepath a:active {
+	--color-link-filepath: var(--color-link-filepath-active);
+	color: var(--color-link-filepath-active);
+	border-color: var(--color-link-active);
+}
+
+.filepath a:active:focus {
+	color: inherit;
+}
+
+.path-info .anchor {
+	--h1-margin-vertical: var(--filepath-padding);
+	
+	padding: var(--h1-margin-vertical) var(--filepath-padding) var(--h1-margin-vertical) 0;
+	display: inline-block;
 }
 
 h1 {
 	--h1-margin-vertical: 0.5rem;
 	
-	margin: var(--h1-margin-vertical) 0;
+	margin: 0 0 var(--h1-margin-vertical) 0;
 	
 	font-size: var(--body-font-size);
 	font-weight: bold;
-}
-
-h1:target * {
-	background-color: var(--color-highlight);
 }
 
 article, hgroup {
@@ -162,73 +213,10 @@ hgroup h1 {
 }
 
 p {
-	margin: 0 0 0.5em 0;
-}
-
-figure {
-	margin: 0;
-	padding: 0;
+	--p-margin-vertical: 0.5em;
 	
-	display: flex;
-	flex-direction: column;
-}
-
-figure.overlay, figure.overlay.bottom {
-	justify-content: flex-end;
-}
-
-figure.overlay.top {
-	justify-content: flex-start;
-}
-
-figure > * {
-	display: flex;
-}
-
-figure img {
-	--figure-img-border-width: 1px;
-	
-	width: calc(100% - var(--figure-img-border-width));
-	border: var(--figure-img-border-width) solid black;
-	margin-bottom: calc(var(--figure-img-border-width) * -1);
-}
-
-a > img:only-child {
-	cursor: zoom-in;
-}
-
-figure a:focus {
-	outline: none;
-}
-
-figure.overlay figcaption {
-	--padding-sides: 2em;
-	
-	width: auto;
-	height: auto;
-	
-	padding: 1em 1em;
-	display: block;
-	position: absolute;
-	box-sizing: border-box;
-	transform: translateY(0%);
-	
-	color: white;
-	text-shadow: 1px 1px 0px black;
-	
-	cursor: text;
-}
-
-figure.overlay.dot:not(.right) figcaption:before {
-	content:"• ";
-}
-
-figure.overlay figcaption, figure.overlay.left figcapion {
-	align-self: flex-start;
-}
-
-figure.overlay.right figcaption {
-	align-self: flex-end;
+	margin: 0 0 var(--p-margin-vertical) 0;
+	hyphens: auto;
 }
 
 .nowrap {
@@ -252,8 +240,10 @@ figure.overlay.right figcaption {
 .creative-commons {
 	--creative-commons-spacing: 0.1em;
 	
-	display: inline-block;
+	display: block;
 	vertical-align: middle;
+	margin-left: -0.1em;
+	margin-right: -0.1em;
 }
 
 .creative-commons * {
@@ -276,3 +266,17 @@ figure.overlay.right figcaption {
 .creative-commons img + abbr, .creative-commons abbr + img {
 	margin-left: calc(var(--creative-commons-spacing) * 2);
 }
+
+.snippets {
+	--snippets-column-gap: 2rem;
+	--snippets-max-width: calc(calc(var(--main-max-width) - var(--snippets-column-gap)) * 0.5);
+	column-count: 2;
+	column-gap: 2rem;
+	column-width: 200px;
+}
+
+.snippets > * {
+	break-inside: avoid;
+}
+
+/* Media Queries */
