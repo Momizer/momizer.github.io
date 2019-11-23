@@ -1,2 +1,4 @@
 *.lnk
 *.efu
+*.n++session
+*.n++workspace

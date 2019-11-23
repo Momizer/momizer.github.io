@@ -24,15 +24,16 @@
 	--body-font-family: var(--root-font-family);
 	--body-font-size: var(--root-font-size);
 
-	--filepath-padding: 0.3em;
-	--filepath-border-width: 1px;
-	
-	--img-border-width: 1px;
-	
 	--gap-dividing: 2rem;
-	
+
 	--heading-margin-vertical: 0.5em;
 	--h1-margin-vertical: var(--heading-margin-vertical);
+	
+	--img-border-width: 1px;
+
+	--filepath-padding: 0.3em;
+	--filepath-border-width: 1px;
+	--filepath-link-hitbox: calc(var(--filepath-padding) + var(--filepath-border-width));
 	
 	font-family: var(--root-font-family);
 	font-size: var(--root-font-size);
@@ -97,16 +98,20 @@ a:not(.silent)[href*="//"]:after {
 
 .path-info .info {
 	display: inline-block;
+	position: relative;
+	padding-right: var(--filepath-link-hitbox);
 }
 
 .filepath {
 	padding: var(--filepath-padding);
 	margin: 0px;
 	display: inline;
+	position: relative;
 	
 	font-weight: bold;
 	white-space: normal;
 	text-decoration: none;
+	text-transform: lowercase;
 	line-height: calc(1.5em + var(--filepath-padding));
 
 	background-color: var(--color-background);
@@ -116,7 +121,6 @@ a:not(.silent)[href*="//"]:after {
 	box-decoration-break: clone;
 	
 	cursor: default;
-	text-transform: lowercase;
 	
 	/* box-shadow: 0.75px 1px var(--color-link-filepath); */;
 }
@@ -127,22 +131,34 @@ a:not(.silent)[href*="//"]:after {
 }
 
 .filepath a[href] {
-	--filepath-link-hitbox: calc(var(--filepath-padding) + var(--filepath-border-width));
-	
 	margin: calc(var(--filepath-link-hitbox) * -1) 0;
 	padding: var(--filepath-border-width) 0;
 	display: inline-block;
 	
 	color: var(--color-link-filepath);
+	white-space: nowrap;
 	text-decoration: none;
+}
+
+.filepath a[href]:first-of-type {
+	padding-left: var(--filepath-link-hitbox);
+	margin-left: calc(var(--filepath-link-hitbox) * -1);
+}
+
+.filepath a[href]:last-of-type {
+	padding-right: calc(var(--filepath-link-hitbox) * 2);
+	margin-right: calc(var(--filepath-link-hitbox) * -2);
 }
 
 .filepath a[href]:focus {
 	outline: none;
+}
+
+.filepath a[href]:focus > *:not(.none) {
 	text-decoration: underline;
 }
 
-.filepath a[href]:focus:hover {
+.filepath a[href]:focus:hover > *:not(.none) {
 	text-decoration-color: var(--color-link-filepath);
 }
 
@@ -154,28 +170,19 @@ a:not(.silent)[href*="//"]:after {
 	color: inherit;	
 }
 
-.filepath a[href]:first-of-type {
-	padding-left: var(--filepath-link-hitbox);
-	margin-left: calc(var(--filepath-link-hitbox) * -1);
-}
-
-.filepath a[href]:last-of-type {
-	padding-right: var(--filepath-link-hitbox);
-	margin-right: calc(var(--filepath-link-hitbox) * -1);
-}
-
 .filepath a[href]:hover, 
-.path-info a[href].anchor:hover ~ .info a[href]:last-of-type, 
-.path-info a[href].anchor:focus ~ .info a[href]:last-of-type {
+.path-info a[href].anchor:hover ~ .info:first-of-type .filepath:first-of-type a[href]:last-of-type, 
+.path-info a[href].anchor:focus ~ .info:first-of-type .filepath:first-of-type a[href]:last-of-type {
 	color: var(--color-link-filepath-hover);
 }
 
 .filepath:hover, 
 .filepath:focus-within,
-.path-info a[href].anchor:hover ~ .info .filepath, 
-.path-info a[href].anchor:focus ~ .info .filepath {
+.path-info a[href].anchor:hover ~ .info:first-of-type .filepath, 
+.path-info a[href].anchor:focus ~ .info:first-of-type .filepath {
 	--color-link-filepath: var(--color-link-filepath-hover-inactive);
 	border-style: solid;
+	z-index: 1;
 }
 
 .filepath.single:hover, 
@@ -194,10 +201,43 @@ a:not(.silent)[href*="//"]:after {
 	color: inherit;
 }
 
+.filepath a[href^="file"]:first-of-type:before {
+	display:inline;
+	
+	content:"🗁 ";
+	text-decoration: none;
+	white-space: nowrap;
+	
+	color: var(--color-link-filepath);
+}
+
+/*
+.filepath a[href^="file"]:first-of-type {
+	text-transform: uppercase;
+}
+*/
+
+.info .filepath:empty:before {
+	content: "n⁄a";
+}
+
+.path-info a.anchor ~ .info .filepath:empty {
+	display: none;
+}
+
+.filepath a[href]:hover .none,
+.filepath a[href]:focus .none {
+	text-decoration: line-through;
+}
+
+.filepath .none {
+	color: var(--color-link-filepath);
+}
+
 .path-info .anchor {
 	--h1-margin-vertical: var(--filepath-padding);
 	
-	padding: 0 var(--filepath-padding) var(--h1-margin-vertical) 0;
+	padding: var(--h1-margin-vertical) var(--filepath-padding) var(--h1-margin-vertical) 0;
 	display: inline-block;
 }
 
