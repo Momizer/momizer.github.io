@@ -406,8 +406,7 @@ a[href] img {
 }
 
 .image-box .info {
-	display: grid;
-	grid-template-columns: minmax(min-content, max-content);
+	display: inline-block;
 }
 
 .image-box .info > * {
