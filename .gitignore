@@ -1,4 +1,7 @@
 *.lnk
+*.bat
+*.url
+
 *.efu
 *.n++session
 *.n++workspace
