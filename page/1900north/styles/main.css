@@ -102,7 +102,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-header a {
+header a:link {
 	display: inline-block;
 	margin: var(--button-margin);
 	
