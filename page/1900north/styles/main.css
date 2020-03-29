@@ -1,34 +1,37 @@
 /* fonts */
 @font-face {
-	font-family: "Kepler Black";
-	src: 
-		local('Kepler Std Black Extended'), 
-		local('KeplerStd-BlackExt'),
-        url('../fonts/KeplerStd-BlackExt.woff2') format('woff2'),
-        url('../fonts/KeplerStd-BlackExt.woff') format('woff');
-}
-
-@font-face {
 	font-family: "Kelvinch";
-	src: local("Kelvinch");
+	src: 
+		local("Kelvinch"),
+		url('../fonts/Kelvinch-Roman.woff2') format('woff2'),
+		url('../fonts/Kelvinch-Roman.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Kelvinch";
-	src: local("Kelvinch Bold");
+	src: 
+		local("Kelvinch Bold"),
+		url('../fonts/Kelvinch-Bold.woff2') format('woff2'),
+		url('../fonts/Kelvinch-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Kelvinch";
-	src: local("Kelvinch Italic");
+	src: 
+		local("Kelvinch Italic"),
+		url('../fonts/Kelvinch-Italic.woff2') format('woff2'),
+		url('../fonts/Kelvinch-Italic.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: "Kelvinch";
-	src: local("Kelvinch Bold Italic");
+	src: 
+		local("Kelvinch Bold Italic"),
+		url('../fonts/Kelvinch-BoldItalic.woff2') format('woff2'),
+		url('../fonts/Kelvinch-BoldItalic.woff') format('woff');
 	font-weight: bold;
 	font-style: italic;
 }
@@ -347,7 +350,7 @@ img.icon {
 	padding-right: 0.25em;
 	margin: 0 -0.15em;
 	
-	vertical-align: text-bottom;
+	vertical-align: middle;
 }
 
 @media (any-hover: none) {
