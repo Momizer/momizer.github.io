@@ -2,7 +2,7 @@
 @font-face {
 	font-family: "Kelvinch";
 	src: 
-		local("Kelvinch"),
+		/* local("Kelvinch"), */
 		url('../fonts/Kelvinch-Roman.woff2') format('woff2'),
 		url('../fonts/Kelvinch-Roman.woff') format('woff');
 	font-weight: normal;
@@ -11,7 +11,7 @@
 @font-face {
 	font-family: "Kelvinch";
 	src: 
-		local("Kelvinch Bold"),
+		/* local("Kelvinch Bold"), */
 		url('../fonts/Kelvinch-Bold.woff2') format('woff2'),
 		url('../fonts/Kelvinch-Bold.woff') format('woff');
 	font-weight: bold;
@@ -20,7 +20,7 @@
 @font-face {
 	font-family: "Kelvinch";
 	src: 
-		local("Kelvinch Italic"),
+		/* local("Kelvinch Italic"), */
 		url('../fonts/Kelvinch-Italic.woff2') format('woff2'),
 		url('../fonts/Kelvinch-Italic.woff') format('woff');
 	font-weight: normal;
@@ -29,7 +29,7 @@
 @font-face {
 	font-family: "Kelvinch";
 	src: 
-		local("Kelvinch Bold Italic"),
+		/* local("Kelvinch Bold Italic"), */
 		url('../fonts/Kelvinch-BoldItalic.woff2') format('woff2'),
 		url('../fonts/Kelvinch-BoldItalic.woff') format('woff');
 	font-weight: bold;
@@ -39,10 +39,10 @@
 @font-face {
 	font-family: "Franklin Gothic";
 	src: 
-		local('Franklin Gothic Demi Cond'), 
-		local('FranklinGothic-DemiCond'),
-        url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
-        url('../fonts/FranklinGothic-DemiCond.woff') format('woff');
+		/* local('Franklin Gothic Demi Cond'),  */
+		/* local('FranklinGothic-DemiCond'), */
+        /* url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'), */
+        /* url('../fonts/FranklinGothic-DemiCond.woff') format('woff'); */
 }
 
 /* variables */
@@ -96,7 +96,7 @@ header {
 	align-items: center;
 }
 
-a:link {
+a:link, a:visited {
 	color: inherit;
 	text-decoration: none;
 }
@@ -105,7 +105,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-header a:link {
+header a:link, header a:visited {
 	display: inline-block;
 	margin: var(--button-margin);
 	
@@ -220,45 +220,6 @@ h1,h2,h3,h4,h5,h6,h7,h8,h9 {
   font-size:1.5em;
   font-height:1.5em;
   margin:0px auto;
-}
-
-.anchor:target + .cutout h1 {
-    animation-name: text-glow;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;    
-}
-
-.anchor:target + .cutout .button {
-    animation-name: background-glow;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;    
-}
-
-.anchor:target + .cutout {
-    animation-name: background-dim;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;    
-}
-
-@keyframes text-glow {
-    0.0%  	{ color: rgba(16, 173, 137, 1); }
-	20.0%  	{ color: rgba(16, 173, 137, 1); }
-    100.0%  { color: inherit; }
-}
-
-@keyframes background-glow {
-    0.0%  	{ background-color: rgba(16, 173, 137, 1); }
-	20.0%  	{ background-color: rgba(16, 173, 137, 1); }
-    100.0%  { background-color: black; }
-}
-
-@keyframes background-dim {
-    0.0%  	{ background-color: #e6f0ed; }
-	20.0%  	{ background-color: #e6f0ed; }
-    100.0%  { background-color: #F3F7F6; }
 }
 
 h1 {
@@ -505,6 +466,45 @@ img.icon {
 	
 	header.transparent .logo {
 		background-color: white;
+	}
+	
+	.anchor:target + .cutout h1 {
+		animation-name: text-glow;
+		animation-duration: 2s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;    
+	}
+
+	.anchor:target + .cutout .button {
+		animation-name: background-glow;
+		animation-duration: 2s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;    
+	}
+
+	.anchor:target + .cutout {
+		animation-name: background-dim;
+		animation-duration: 2s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;    
+	}
+
+	@keyframes text-glow {
+		0.0%  	{ color: rgba(16, 173, 137, 1); }
+		20.0%  	{ color: rgba(16, 173, 137, 1); }
+		100.0%  { color: inherit; }
+	}
+
+	@keyframes background-glow {
+		0.0%  	{ background-color: rgba(16, 173, 137, 1); }
+		20.0%  	{ background-color: rgba(16, 173, 137, 1); }
+		100.0%  { background-color: black; }
+	}
+
+	@keyframes background-dim {
+		0.0%  	{ background-color: #e6f0ed; }
+		20.0%  	{ background-color: #e6f0ed; }
+		100.0%  { background-color: #F3F7F6; }
 	}
 }
 
