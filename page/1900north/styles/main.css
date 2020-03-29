@@ -37,7 +37,7 @@
 }
 
 @font-face {
-	font-family: "Franklin Gothic";
+	font-family: "Kepler";
 	src: 
 		url('../fonts/KeplerStd-BlackExt.woff') format('woff');
 		/* local('Franklin Gothic Demi Cond'),  */
@@ -110,7 +110,7 @@ header a:link, header a:visited {
 	display: inline-block;
 	margin: var(--button-margin);
 	
-	color: var(--color-text);
+	color: var(--color-text) !important;
 	text-decoration: none;
 }
 
@@ -196,7 +196,7 @@ header .button {
 h1,h2,h3,h4,h5,h6,h7,h8,h9 {
 	margin: 1rem 0 0.5rem 0;
 	
-	font-family: "Franklin Gothic";
+	font-family: "Kepler";
 	font-weight: normal;
 }
 
@@ -312,7 +312,7 @@ img.icon {
 	padding-right: 0.25em;
 	margin: 0 -0.15em;
 	
-	vertical-align: -18%;
+	vertical-align: -17%;
 }
 
 @media (any-hover: none) {
