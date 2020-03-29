@@ -36,16 +36,6 @@
 	font-style: italic;
 }
 
-@font-face {
-	font-family: "Kepler";
-	src: 
-		url('../fonts/KeplerStd-BlackExt.woff') format('woff');
-		/* local('Franklin Gothic Demi Cond'),  */
-		/* local('FranklinGothic-DemiCond'), */
-        /* url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'), */
-        /* url('../fonts/FranklinGothic-DemiCond.woff') format('woff'); */
-}
-
 /* variables */
 :root {
 	--main-width: 800px;
@@ -195,8 +185,7 @@ header .button {
 
 h1,h2,h3,h4,h5,h6,h7,h8,h9 {
 	margin: 1rem 0 0.5rem 0;
-	
-	font-family: "Kepler";
+
 	font-weight: normal;
 }
 
