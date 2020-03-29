@@ -39,6 +39,7 @@
 @font-face {
 	font-family: "Franklin Gothic";
 	src: 
+		url('../fonts/KeplerStd-BlackExt.woff') format('woff');
 		/* local('Franklin Gothic Demi Cond'),  */
 		/* local('FranklinGothic-DemiCond'), */
         /* url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'), */
@@ -311,7 +312,7 @@ img.icon {
 	padding-right: 0.25em;
 	margin: 0 -0.15em;
 	
-	vertical-align: middle;
+	vertical-align: -18%;
 }
 
 @media (any-hover: none) {
