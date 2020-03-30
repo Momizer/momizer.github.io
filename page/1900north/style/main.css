@@ -3,8 +3,8 @@
 	font-family: "Kelvinch";
 	src: 
 		/* local("Kelvinch"), */
-		url('../fonts/Kelvinch-Roman.woff2') format('woff2'),
-		url('../fonts/Kelvinch-Roman.woff') format('woff');
+		url('../font/Kelvinch-Roman.woff2') format('woff2'),
+		url('../font/Kelvinch-Roman.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -12,8 +12,8 @@
 	font-family: "Kelvinch";
 	src: 
 		/* local("Kelvinch Bold"), */
-		url('../fonts/Kelvinch-Bold.woff2') format('woff2'),
-		url('../fonts/Kelvinch-Bold.woff') format('woff');
+		url('../font/Kelvinch-Bold.woff2') format('woff2'),
+		url('../font/Kelvinch-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
 }
@@ -21,8 +21,8 @@
 	font-family: "Kelvinch";
 	src: 
 		/* local("Kelvinch Italic"), */
-		url('../fonts/Kelvinch-Italic.woff2') format('woff2'),
-		url('../fonts/Kelvinch-Italic.woff') format('woff');
+		url('../font/Kelvinch-Italic.woff2') format('woff2'),
+		url('../font/Kelvinch-Italic.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
 }
@@ -30,8 +30,8 @@
 	font-family: "Kelvinch";
 	src: 
 		/* local("Kelvinch Bold Italic"), */
-		url('../fonts/Kelvinch-BoldItalic.woff2') format('woff2'),
-		url('../fonts/Kelvinch-BoldItalic.woff') format('woff');
+		url('../font/Kelvinch-BoldItalic.woff2') format('woff2'),
+		url('../font/Kelvinch-BoldItalic.woff') format('woff');
 	font-weight: bold;
 	font-style: italic;
 }
@@ -41,8 +41,8 @@
 	src: 
 		/* local('Franklin Gothic Demi Cond'),  */
 		/* local('FranklinGothic-DemiCond'), */
-        url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
-        url('../fonts/FranklinGothic-DemiCond.woff') format('woff');
+        url('../font/FranklinGothic-DemiCond.woff2') format('woff2'),
+        url('../font/FranklinGothic-DemiCond.woff') format('woff');
 }
 
 /* variables */
@@ -109,7 +109,7 @@ header a:link, header a:visited {
 	display: inline-block;
 	margin: var(--button-margin);
 	
-	color: var(--color-text) !important;
+	color: var(--color-text);
 	text-decoration: none;
 }
 
@@ -378,7 +378,7 @@ img.icon {
 		border-radius: 8px;
 		border: none;
 		background-color: #DDD;
-		box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.3);
+		/* box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.3); */
 	}
 	
 	.logo {

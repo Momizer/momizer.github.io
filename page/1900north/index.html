@@ -3,25 +3,15 @@
 
 <head>
 	<title>1900 North — Carpet Cleaning at its Best!</title>
-	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+	<link rel="stylesheet" type="text/css" href="style/main.css"/>
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<script language="JavaScript" type="text/javascript">
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 50) {
-			   $('header').removeClass('transparent');
-			} else {
-			   $('header').addClass('transparent');
-			}
-		});
-	</script>
 </head>
 
 <body id="top">
 	<main>
 		<div class="greeter">
-			<header class="transparent">
+			<header id="header" class="transparent">
 				<div class="header-box">
 					<a href="." class="logo"></a>
 					<div class="links mobile">
@@ -42,7 +32,7 @@
 			</div>
 		</div>
 		<section>
-			<h1 id="intro">At 1900 North, test8</h1>
+			<h1 id="intro">At 1900 North, test9</h1>
 			<p class="intro">…after more than <em>three decades</em> of cleaning experience, we look at carpet cleaning from a unique perspective. Not only do we love cleaning carpets, but we love cleaning to the best of our abilities.</p>
 			<p class="intro"><b>Every day. Every job. <wbr><span class="fresh no-wrap">It's in our <i>DNA</i>.</span></b></p>
 			<section class="subtext">
@@ -108,6 +98,20 @@
 			<p class="mobile">Monday through Friday, <span class="no-wrap">9:00am–5:00pm</span></p>
 		</section>
 	</main>
+	
+	<script language="JavaScript" type="text/javascript">
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+			document.getElementById("header").classList.remove("transparent");
+		  } else {
+			document.getElementById("header").classList.add("transparent");
+		  }
+		}
+	</script>
 </body>
+
+
 
 </html>
