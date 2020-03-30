@@ -1,6 +1,6 @@
 /* fonts */
 @font-face {
-	font-family: "Kelvinch";
+	font-family: "Hahaha";
 	src: 
 		/* local("Kelvinch"), */
 		url('../fonts/Kelvinch-Roman.woff2') format('woff2'),
@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: "Kelvinch";
+	font-family: "Hahaha";
 	src: 
 		/* local("Kelvinch Bold"), */
 		url('../fonts/Kelvinch-Bold.woff2') format('woff2'),
@@ -18,7 +18,7 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: "Kelvinch";
+	font-family: "Hahaha";
 	src: 
 		/* local("Kelvinch Italic"), */
 		url('../fonts/Kelvinch-Italic.woff2') format('woff2'),
@@ -27,7 +27,7 @@
 	font-style: italic;
 }
 @font-face {
-	font-family: "Kelvinch";
+	font-family: "Hahaha";
 	src: 
 		/* local("Kelvinch Bold Italic"), */
 		url('../fonts/Kelvinch-BoldItalic.woff2') format('woff2'),
@@ -39,8 +39,8 @@
 @font-face {
 	font-family: "Franklin Gothic";
 	src: 
-		local('Franklin Gothic Demi Cond'), 
-		local('FranklinGothic-DemiCond'),
+		/* local('Franklin Gothic Demi Cond'),  */
+		/* local('FranklinGothic-DemiCond'), */
         url('../fonts/FranklinGothic-DemiCond.woff2') format('woff2'),
         url('../fonts/FranklinGothic-DemiCond.woff') format('woff');
 }
@@ -240,7 +240,7 @@ h2 {
 p {
 	margin: 0.5rem 0 0 0;
 	
-	font-family: "Kelvinch";
+	font-family: "Hahaha";
 	font-size: 18px;
 	letter-spacing: -0.5px;
 	line-height: 1.5em;
