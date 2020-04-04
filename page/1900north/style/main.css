@@ -545,11 +545,8 @@ a .line-container label {
 	}
 	
 	main {
+		margin-top: 80px;
 		max-width: unset;
-	}
-	
-	.greeter.page + * {
-		margin-top: var(--header-height) !important;
 	}
 	
 	.cutout {
@@ -570,10 +567,10 @@ a .line-container label {
 	}
 	
 	.cutout.page {
-		padding-top: 1em !important;
-		padding-bottom: 1em !important;
+		padding-top: 1em;
+		padding-bottom: 1em;
 		position: relative;
-		background-color: red;
+		background-color: #E3EAE6;
 		z-index: 1;
 	}
 	
