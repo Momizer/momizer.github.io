@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>1900 North — Carpet Cleaning at its Best!</title>
+	<link rel="stylesheet" type="text/css" href="style/main.css"/>
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body id="top">
+	<main>
+		<div class="greeter page">
+			<header class="">
+				<div class="header-box">
+					<a href="." class="logo"><img class="logo-inner" src="logo.svg"/></a>
+					<div class="links mobile">
+						<a href="index.html#services">Services</a><a href="#contact">Contact</a><a href="tel:1-801-636-6559" class="button mobile"><img class="icon" src="phone.svg"/>Call</a>
+					</div>
+				</div>
+			</header>
+			<div class="hero-box desktop">
+				<div class="hero" id="hero"></div>
+				<section class="contact desktop">
+					<p class="contact-info">
+						<b><i>Richard Swan</i></b><br>
+						<a href="tel:1-801-636-6559"><span class="subtext">+1</span> 801-636-6559</a><br>
+						<a href="mailto:richard@1900north.com">richard@1900north.com</a>
+					</p>
+					<p>Monday through Friday<br>9:00am–5:00pm<br></p>
+				</section>
+			</div>
+		</div>
+		<a href="index.html" class="cutout page mobile">
+			<div class="line-container">
+				<span class="line arrow-left"></span>
+				<label><p><b>Go Back to Homepage</b></p></label>
+			</div>
+		</a>
+		<section>
+			<h1>Frequently Asked</h1>
+			<a href="index.html" class="cutout page desktop">
+				<div class="line-container" style="max-width: 233px">
+					<span class="line arrow-left"></span>
+					<label><p><b>Go Back to Homepage</b></p></label>
+				</div>
+			</a>
+		</section>
+		<section>
+			<h2>Do you just clean homes?</h2>
+			<p><b>A:</b> Our focus is residential cleaning, of which we've cleaned many thousands of residences over the years in Utah County (including 24 years as the owener of <i>Swan's Carpet Cleaning</i> and 10 years as the owner of <i>Benchmark Carpet Cleaning</i>)</p>
+			<p class="subtext">We've also cleaned for dozens of commercial accounts, some which are listed below:</p>
+			<ul class="subtext inline"><li>United Way</li><li>Marriott</li><li>Westc</li><li>Magleby Construction</li><li>Riverside Country Club</li><li>Alexanders Print Advantage</li><li>Quality</li><li>Influence Residential</li><li>Title West</li><li>Redstone Residential</li><li>Brereton Automotive</li><li>Brookside Professional Center</li><li>Jimmy's Love Bug</li><li>Larson and Company<li>McEwan Custom Homes</li><li>Watts Enterprises</li><li>Robinson Construction</li>
+			</ul>
+			<h2>Deep carpet cleaning?</h2>
+			<p><b>A:</b> Our focus is residential cleaning, of which we've cleaned many thousands of residences over the years in Utah County (including 24 years as the owener of <i>Swan's Carpet Cleaning</i> and 10 years as the owner of <i>Benchmark Carpet Cleaning</i>)</p>
+			<p class="subtext">We've also cleaned for dozens of commercial accounts, some which are listed below.</p>
+		</section>
+		<a href="index.html" class="cutout page mobile">
+			<div class="line-container">
+				<span class="line arrow-left"></span>
+				<label><p><b>Go Back to Homepage</b></p></label>
+			</div>
+		</a>
+			
+		</a>
+		<a id="contact" class="anchor"></a>
+		<section class="contact cutout">
+			<h1 class="mobile">Make an Appointment</h1>
+			<h1 class="desktop">We'd love to hear from you!</h1>
+			<p class="contact-info mobile">
+				<b><i>Richard Swan</i></b><br>
+				<span class="subtext">+1</span> 801-636-6559<br>
+				richard@1900north.com
+			</p>
+			<div class="buttons">
+				<a href="tel:1-801-636-6559" class="button"><img class="icon" src="phone.svg"/>Call</a>
+				<a href="mailto:richard@1900north.com" class="button">Email</a>
+			</div>
+			<p class="mobile">Monday through Friday, <span class="no-wrap">9:00am–5:00pm</span></p>
+		</section>
+	</main>
+	
+	<script language="JavaScript" type="text/javascript">
+	
+		resize();
+		window.addEventListener('resize', resize);
+		
+		function resize() {
+	
+			var headerHeight = document.getElementById("header").offsetHeight;
+			var heroHeight = document.getElementById("hero").clientHeight;
+			var headerTransparencyPoint = heroHeight - headerHeight;
+			
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > headerTransparencyPoint || document.documentElement.scrollTop > headerTransparencyPoint) {
+				document.getElementById("header").classList.remove("transparent");
+			  } else {
+				document.getElementById("header").classList.add("transparent");
+			  }
+			}
+			
+		}
+	</script>
+</body>
+
+
+
+</html>
