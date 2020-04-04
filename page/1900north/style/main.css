@@ -389,8 +389,8 @@ img.icon {
 .line.arrow-right:after {
 	position: absolute;
 	content: '';
-	bottom: calc(var(--arrow-size) * -1);
-	right: 0;
+	bottom: -0.36em;
+	right: -1px;
 	width: 0;
 	height: 0;
 	border-top: var(--arrow-size) solid transparent;
@@ -401,8 +401,8 @@ img.icon {
 .line.arrow-left:after {
 	position: absolute;
 	content: '';
-	top: calc(var(--arrow-size) * -1);
-	left: 0;
+	top: -0.36em;
+	left: -1px;
 	width: 0;
 	height: 0;
 	border-top: var(--arrow-size) solid transparent;
@@ -570,8 +570,8 @@ a .line-container label {
 	}
 	
 	.cutout.page {
-		padding-top: 1em;
-		padding-bottom: 1em;
+		padding-top: 1em !important;
+		padding-bottom: 1em !important;
 		position: relative;
 		background-color: #E3EAE6;
 		z-index: 1;
