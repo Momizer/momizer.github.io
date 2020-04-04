@@ -13,14 +13,14 @@
 		<div class="greeter">
 			<header id="header" class="transparent">
 				<div class="header-box">
-					<a href="." class="logo"></a>
+					<a href="." class="logo"><img class="logo-inner" src="logo.svg"/></a>
 					<div class="links mobile">
 						<a href="#services">Services</a><a href="#contact">Contact</a><a href="tel:1-801-636-6559" class="button mobile"><img class="icon" src="phone.svg"/>Call</a>
 					</div>
 				</div>
 			</header>
 			<div class="hero-box">
-				<div class="hero"></div>
+				<div class="hero" id="hero"></div>
 				<section class="contact desktop">
 					<p class="contact-info">
 						<b><i>Richard Swan</i></b><br>
@@ -80,8 +80,23 @@
 			<p><b>Q: Do you just clean homes?</b></p>
 			<p><b>A:</b> Our focus is residential cleaning, of which we've cleaned many thousands of residences over the years in Utah County (including 24 years as the owener of <i>Swan's Carpet Cleaning</i> and 10 years as the owner of <i>Benchmark Carpet Cleaning</i>)</p>
 			<p class="subtext">We've also cleaned for dozens of commercial accounts, some which are listed below:</p>
-			<p class="subtext">United Way 🞄 Marriott 🞄 Westc 🞄 Magleby Construction 🞄 Riverside Country Club 🞄 Alexanders Print Advantage 🞄 Quality 🞄 Influence Residential 🞄 Title West 🞄 Redstone Residential 🞄 Brereton Automotive 🞄 Brookside Professional Center 🞄 Jimmy's Love Bug 🞄 Larson and Company 🞄 McEwan Custom Homes 🞄 Watts Enterprises 🞄 Robinson Construction</p>
+			<ul class="subtext inline"><li>United Way</li><li>Marriott</li><li>Westc</li><li>Magleby Construction</li><li>Riverside Country Club</li><li>Alexanders Print Advantage</li><li>Quality</li><li>Influence Residential</li><li>Title West</li><li>Redstone Residential</li><li>Brereton Automotive</li><li>Brookside Professional Center</li><li>Jimmy's Love Bug</li><li>Larson and Company<li>McEwan Custom Homes</li><li>Watts Enterprises</li><li>Robinson Construction</li>
+			</ul>
+			<a class="desktop" href="faq.html">
+				<div class="line-container">
+					<label><p><b>More frequently asked questions</b></p></label>
+					<span class="line arrow-right"></span>
+				</div>
+			</a>
 		</section>
+		<a href="faq.html" class="cutout page mobile">
+			<div class="line-container">
+				<label><p><b>More Frequently Asked Questions</b></p></label>
+				<span class="line arrow-right"></span>
+			</div>
+		</a>
+			
+		</a>
 		<a id="contact" class="anchor"></a>
 		<section class="contact cutout">
 			<h1 class="mobile">Make an Appointment</h1>
@@ -100,14 +115,26 @@
 	</main>
 	
 	<script language="JavaScript" type="text/javascript">
-		window.onscroll = function() {scrollFunction()};
+	
+		resize();
+		window.addEventListener('resize', resize);
+		
+		function resize() {
+	
+			var headerHeight = document.getElementById("header").offsetHeight;
+			var heroHeight = document.getElementById("hero").clientHeight;
+			var headerTransparencyPoint = heroHeight - headerHeight;
+			
+			window.onscroll = function() {scrollFunction()};
 
-		function scrollFunction() {
-		  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-			document.getElementById("header").classList.remove("transparent");
-		  } else {
-			document.getElementById("header").classList.add("transparent");
-		  }
+			function scrollFunction() {
+			  if (document.body.scrollTop > headerTransparencyPoint || document.documentElement.scrollTop > headerTransparencyPoint) {
+				document.getElementById("header").classList.remove("transparent");
+			  } else {
+				document.getElementById("header").classList.add("transparent");
+			  }
+			}
+			
 		}
 	</script>
 </body>
