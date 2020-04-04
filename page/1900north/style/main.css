@@ -545,8 +545,11 @@ a .line-container label {
 	}
 	
 	main {
-		margin-top: 80px;
 		max-width: unset;
+	}
+	
+	main.page {
+		margin-top: 80px;
 	}
 	
 	.cutout {
