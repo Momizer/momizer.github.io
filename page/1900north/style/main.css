@@ -418,6 +418,34 @@ a .line-container label {
 	text-indent: 0;
 }
 
+.review {
+	margin-top: 2.5rem;
+	font-style: italic;
+}
+
+.review .author {
+	display: inline;
+	hyphens: none;
+	font-weight: bold;
+}
+
+.review .author:before {
+	content:" — ";
+}
+
+.review p {
+	text-indent: 1em;
+}
+
+.review img.avatar {
+	height: 2em;
+	display: inline;
+	margin-bottom: 5px;
+	
+	vertical-align: middle;
+	border-radius: 900px;
+}
+
 @media (any-hover: none) {
 	header a {
 		text-decoration: none;
