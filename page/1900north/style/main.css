@@ -67,6 +67,7 @@ body {
 	
 	font-family: arial, sans-serif;
 	font-size: 16px;
+	font-variant-ligatures: none;
 }
 
 main {
@@ -241,18 +242,6 @@ h1,h2,h3,h4,h5,h6,h7,h8,h9 {
 
 .anchor + h1 {
 	transition: color 1s;
-}
-
-#dynamic {
-  width:500px;
-  border:dashed white;
-  border-radius:10%;
-  padding:3em;
-  font-family:helvetica, arial;
-  font-weight:bold;
-  font-size:1.5em;
-  font-height:1.5em;
-  margin:0px auto;
 }
 
 h1 {
