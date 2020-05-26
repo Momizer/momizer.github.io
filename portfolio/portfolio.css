@@ -1,0 +1,524 @@
+@font-face {
+	font-family: "Franklin Gothic";
+	src: 
+		local('Franklin Gothic Demi Cond'), 
+		local('FranklinGothic-DemiCond'),
+        url('FranklinGothic-DemiCond.woff2') format('woff2'),
+        url('FranklinGothic-DemiCond.woff') format('woff');
+}
+
+:root {
+	--main-width: 800px;
+}
+
+::-moz-selection { background: blue; color: white; text-shadow: none; }
+::selection { background: blue; color: white; text-shadow: none; }
+
+.inset-outer *::-moz-selection { background-color: white; color: black; }
+.inset-outer *::selection { background-color: white; color: black; }
+
+img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    }
+
+body {
+	margin: 0px 0px 72px 0px;
+	
+	text-align: left;
+	hyphens: none;
+	
+	font-size: 11.5px;
+	font-family: "arial", sans-serif;
+	line-height: 1.39em;
+	
+	text-shadow: none;
+}
+
+main, footer {
+	margin: 0px auto 0px auto;
+	padding: 0px 10vw;
+	
+	max-width: var(--main-width);
+}
+
+footer {
+	text-align: left;
+	font-weight: bold;
+	
+	
+}
+
+header {
+	margin: 0px 0px 0px 0px;
+}
+
+article {
+	margin: 0px 0px 36px 0px;
+}
+
+section {
+	margin-bottom: 15vh;
+}
+
+section:last-child {
+	margin-bottom: 0px;
+}
+
+#introduction {
+	margin-top: 25vh;
+	margin-bottom: 25vh;
+}
+
+#introduction a {
+	white-space: nowrap;
+}
+
+#introduction h1 {
+	margin-bottom: 0.5em;
+}
+
+#introduction h2 {
+	margin-bottom: 0.6em;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+.no-no-break {
+	white-space: nowrap;
+}
+
+#backplate {
+	width: 100%;
+	height: 50vh;
+	left: 0;
+	top: 0;
+	position: fixed;
+	
+	/*
+	background: rgb(0,0,36);
+	background: linear-gradient(180deg, rgba(0,0,36,1) 0%, rgba(133,120,132,1) 34%, rgba(194,173,170,1) 55%, rgba(240,233,218,1) 75%, rgba(255,252,239,1) 89%, rgba(255,255,255,1) 100%);
+	*/
+	
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20350146894695376) 100%);
+	
+	z-index: -1000;
+}
+
+h1, h2, .inset-outer h3 {
+	margin: 0px 0px 12px 0px;
+	line-height: 1em;
+	
+	font-family: 'Franklin Gothic', sans-serif;
+	font-size: 32px;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 11.5px;
+	margin: 0em 0px 12px 0px;
+	font-weight: bold;
+}
+
+.inset-outer h3 {
+	display: block;
+	margin-top: -0.2em;
+	
+	background-color: #444;
+	color: transparent;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.4);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+}
+
+.inset-outer {
+	color: #555;
+	text-shadow: 0px 1px 0.5px rgba(255,255,255,0.6);
+}
+
+.inset-outer h3, p {
+	max-width: calc(var(--main-width) / 2)
+}
+
+.inset-outer article:not(:first-child) {
+	margin-top: 36px;
+}
+
+.inset-outer article:last-child {
+	margin-bottom: 0px;
+}
+
+.inset-outer article p:last-child {
+	margin-bottom: -0.5em;
+}
+
+}
+
+h1, h2, h3, p {
+	max-width: calc(var(--main-width)/2);
+}
+
+p {	
+	margin: 0em 0px 12px 0px;
+}
+
+ol {
+	margin: 0em 0px 12px 0px;
+	padding: 0px;
+	
+	list-style-type: georgian;
+	list-style-position: inside;
+}
+
+img {
+	background: repeating-linear-gradient(
+		45deg,
+		#000,
+		#000 1.5px,
+		rgba(255,255,255,0) 1.5px,
+		rgba(255,255,255,0) 4px
+	);
+	
+	transition: opacity 1s, filter 1s;
+}
+
+a.reveal {
+	max-height: 565px;
+	mask-image: linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 16%, rgba(0,0,0,1) 100%);
+	transition: max-height 50ms;
+	
+	position: relative;
+}
+
+a.reveal:hover {
+	max-height: 602px;
+	mask-image: none;
+	transition: max-height 50ms;
+}
+
+a.reveal:before {
+	content: "Click to Expand";
+	padding: 0.5em;
+	display: block;
+	background-color: #DDD;
+	outline: 1px dashed gray;
+}
+
+.inset:hover * {
+	transition: opacity 200ms, filter 200ms;
+}
+
+.inset:hover > a img:not(:hover) {
+	opacity: 0.2;
+	filter: grayscale(100%) contrast(150%);
+	transition: opacity 200ms, filter 200ms;
+}
+
+img.use {
+	background: none;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.columns article {
+	width: calc(50% - 18px);
+}
+
+.columns article:first-child {
+	margin-right: 18px;
+}
+
+.columns article:last-child {
+	margin-left: 18px;
+}
+
+.mosaic {
+	margin: -18px -18px 18px -18px;
+	
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	
+	position: relative;
+	left: -3px;
+	
+	/*box-shadow: 12px 12px 0px -1px #000;*/
+}
+
+.work {
+	/*max-width: 103px;*/
+	width: calc( (100%/6) - 36px);
+	height: 190px;
+	margin: 18px;
+	
+	position: relative;
+	overflow: hidden;
+	/*flex-grow: 1;*/
+	
+	background-color: #FFF;
+	outline: #000 1px solid;
+	box-shadow: 12px 12px 0px -1px #000;
+}
+
+.work:focus {outline: 1px dotted black;}
+.work:active {top: 1px;}
+.work:empty:active {top: inherit;}
+
+.work.big {
+	/*max-width: 242px;*/
+	width: calc( (100%/3) - 36px);
+	/*flex-grow: 2;*/
+}
+
+.work.long {
+	width: calc( (100%/1) - 36px);
+}
+
+.work.half {
+	width: calc( (100%/2) - 36px);
+}
+
+.work img {
+	max-height: 700px; /*700px 950px*/
+	
+	margin: auto;
+	position: absolute;
+	top: -9999px;
+	bottom: -9999px;
+	left: -9999px;
+	right: -9999px;
+}
+
+.button {
+	height: 1.3em;
+	text-align: center;
+}
+
+.inset-outer {
+	margin: 0px -42px 42px -42px;
+	padding: 42px;
+	box-shadow: 12px 12px 0px -1px #000,
+				-6px 30px 30px 0px rgba(0,0,0,0.1),
+				20px 30px 120px -24px rgba(0,0,0,0.8),
+				12px 12px 15px 0px rgba(0,0,0,0.6);
+	
+	position: relative;
+	left: -3px;
+	
+	background-color: #C0C0C0;
+	border: 1px outset #FFF;
+	outline: 1px outset #000;
+}
+
+.inset {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.inset-outer.full-width {
+	margin-left: -15vw;
+	margin-right: -15vw;
+}
+
+.inset .preview {
+	width: calc(100% / 4.5);
+	overflow: hidden;
+	
+	outline: 1px solid rgba(64,64,64,0.15);
+}
+
+.inset .preview.long {
+	width: calc(100% / 1.8);
+}
+
+.inset .preview.odd {
+	width: calc(100% / 3);
+}
+
+.inset .preview.full {
+	width: 100%;
+}
+
+.inset .preview.half {
+	width: 50%;
+}
+
+.inset img {
+	width: 100%;
+	display: block;
+}
+
+.inset .preview.odd img {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	color: blue;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+	outline: none;
+}
+
+div#back {
+	position: relative;
+	top: -1px;
+	right: 40px;
+}
+
+div#back a {
+	padding: 5px 8px;
+	position: absolute;
+	
+	font-family: Arial, sans-serif;
+	font-weight: 800;
+	-webkit-text-stroke: 0.5px rgba(255,255,255,0.25);
+}
+
+.spacer {
+	padding-bottom: 54px;
+}
+
+.inset a:focus {
+	z-index: 1000;
+	margin: -1px;
+	border: 1px dashed #DDD;
+	outline: 0;
+	box-shadow: 0px 5px 20px black;
+}
+
+.inset a:hover {
+	z-index: 2000;
+	margin: -1px;
+	border: 1px dashed #DDD;
+	outline: 10px solid rgba(255,255,255,1);
+	box-shadow: 0px 10px 20px black;
+	position: relative;
+}
+
+.inset a:active {
+	opacity: 0.8;
+	transition: opacity 0ms;
+	filter: brightness(80%);
+}
+
+@media screen and (max-width: 1300px) {
+	
+	.inset-outer, .inset-outer.full-width {
+		margin: 0px -42px 42px -42px;
+	}
+	
+}
+
+@media screen and (max-width: 600px) {
+	
+	.work {
+		width: calc( (100%/4) - 36px);
+	}
+	
+	.work.big {
+		width: calc( (100%/2) - 36px);
+	}
+	
+	.columns {
+		display: inline;
+	}
+	
+	.columns article {
+		min-width: 100%;
+	}
+	
+	.columns article:first-child {
+		margin-right: 0px;
+	}
+
+	.columns article:last-child {
+		margin-left: 0px;
+	}
+	
+	.mosaic {
+		margin-top: 30px;
+	}
+	
+	div#back {
+		position: relative;
+		top: 0px;
+		right: 0px;
+		margin-bottom: 3px;
+	}
+	
+	div#back a {
+		margin: 0px -8px;
+		position: relative;
+	}
+	
+	.inset-outer, .inset-outer.full-width {
+		margin-left: -10vw;
+		margin-right: -10vw;
+		width: calc(100% + 20vw + 3px);
+		
+		padding-left: 0px;
+		padding-right: 0px;
+		box-shadow: 0px 0px 0px -1px #000,
+					0px 6px 30px 0px rgba(0,0,0,0.1),
+					0px 12px 120px -24px rgba(0,0,0,0.8),
+					0px 6px 15px 0px rgba(0,0,0,0.6);
+	}
+	
+	.inset-outer h1, .inset-outer h2, .inset-outer h3, .inset-outer p {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+	
+	.no-break {
+		white-space: normal;
+	}
+	
+	.inset a:hover {
+		outline: 0;
+		box-shadow: 0px 5px 20px black;
+	}
+	
+	.inset-outer article:not(:first-child) h3 {
+		margin-top: 2em;
+	}
+	
+	a.reveal:hover {
+		max-height: 565px;
+		mask-image: none;
+	}
+	
+	a.reveal:before {
+		content: "Tap to Expand";
+	}
+	
+	.inset .preview, .inset .preview.odd, .inset .preview.long, .inset .preview.half {
+		width: 100%;
+	}
+	
+}
+
+@media (any-hover: hover) {
+	.inset a:hover {
+		outline: 0;
+		box-shadow: 0px 5px 20px black;
+	}
+	
+	a.reveal:before {
+		content: "Tap to Expand";
+	}
+}
