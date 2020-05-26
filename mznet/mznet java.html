@@ -1,0 +1,200 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../style/mznet.css"/>
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>◐ 1400</title>
+</head>
+
+
+
+<body>
+	<nav>
+		<ul class="crossroads"><li><a accesskey="m" href=""><span class="name"><u>m</u>znet<span class="definition">(mozhnet)</span></span></a></li><li><a accesskey="f" href=""><u>f</u>iles</a></li><li><a accesskey="c" href=""><u>©</u>©©</a></li><li><a accesskey="g" href=""><u>g</u>allery</a></li>
+		</ul>
+	</nav>
+	<main>
+		<div class="wandering-cutouts">
+
+		</div>
+	</main>
+	<!--
+	<footer>
+		<p>⑭ Tradeshmarked 2018–<script>document.write(new Date().getFullYear())</script>. Open to the curious.</p>
+	</footer>
+	-->
+
+	<script>
+		/* snippets */
+		//randomly distribute snippets on page
+		
+		var snippetAmountMax = 3;
+		var snippetAmountMin = 3;
+		
+		
+		
+			/* snippet database */
+			var snippets = document.getElementsByClassName("snippet");
+			var snippetPathBase = "file://C:/Users/Saba/Pictures/Snippets/"; //where snippets are held
+			var snippetPathImageArray = [
+				"ants on lillys michiel schierbeek photography beige border red petals bokeh.jpg", 
+				"bill of rights 1776 tie sar sons of the american revolution tie shopify crop ongoing pattern red black inked font.jpg", 
+				"triple cassette system arrow and live button interface elements red techmoan.png",
+				"new features dynaform eta 5.7 isoparms wireframe smooth geometry pixelled green red analytics system font.jpg",
+				"echinocereus momotaro 北堀修一 japan plant bumpy green pink momotaro wikipedia cluster.GIF",
+				"buffalo internet service support chat blow up cute black red speech bubble.png",
+				"white coffee mug with lipstick stain stock photo offset cloth bubbles spoon puddle brown tan white specular.jpg",
+				"rip john conway xkcd animated game of life sketched grid person pixels black and white.gif",
+				"super mario broth original donkey kong art sticker keep movin' cartoony keep on truckin' alternate dust.jpg",
+			]; //all possible snippets
+			var snippetPathImageArrayShuffled = []; //snippets to show
+			
+			
+			
+			/* snippet generation */
+			function snippetGenerate() {
+				var snippetAmount = Math.min(Math.max(Math.floor((Math.random() * snippetAmountMax) + 1),snippetAmountMin),snippetPathImageArray.length); //how many snippets to show
+				
+				/* shuffle snippets */
+				function randomNoRepeats(array) {
+						var copy = array.slice(0);
+						return function() {
+							if (copy.length < 1) { copy = array.slice(0); }
+							var index = Math.floor(Math.random() * copy.length);
+							var item = copy[index];
+							copy.splice(index, 1);
+							return item;
+						};
+					}
+				
+				var snippetRandom = randomNoRepeats(snippetPathImageArray);
+				
+				/* create snippets */
+				for (var i = 0; i < snippetAmount; i++) {
+					var snippetChosen = snippetRandom();
+					snippetCreate();
+				}
+				
+				/* snippet creation blueprint */
+				function snippetCreate() {
+					//snippet
+					let snippet = document.createElement("div");
+					snippet.classList.add('snippet');
+					
+					//image
+					let snippetPath = snippetPathBase + snippetChosen; //image to draw
+					let snippetImage = document.createElement("img");
+					snippetImage.setAttribute("src", snippetPath);
+					
+					//caption
+					let snippetFigcaption = document.createElement("figcaption");
+					let snippetFilename = document.createTextNode(snippetChosen);
+					
+					//add together
+					snippet.appendChild(snippetImage);
+					snippet.appendChild(snippetFigcaption);
+						snippetFigcaption.appendChild(snippetFilename);
+					
+					//add all to snippet container
+					document.getElementsByClassName("wandering-cutouts")[0].appendChild(snippet);
+				}
+			}
+		
+			/* snippet sizes */
+			var snippetArea = 46225; 		//area of each image
+			var snippetAreaMultiplier = 1; 	//change areas to make sizes more optically similar (biases towards thinner images) (not implemented)
+			
+			//set size of each snippet to be of equal area
+			function snippetSetImageWidthEqualArea() {
+		
+				//calculate each snippet's width to be of equal area
+				function snippetCalcImageWidthEqualArea(snippet) {
+					for (var i = 0; i < snippet.getElementsByTagName("img").length; i++) {
+						var image = snippet.getElementsByTagName("img")[i];
+					}
+					
+					var imageWidthEqualArea = Math.floor(Math.sqrt(snippetArea * (image.naturalWidth/image.naturalHeight)));
+					
+					//do not scale image if larger than max-width
+					if (image.naturalWidth > 215) {
+						return imageWidthEqualArea;
+					}
+				}
+				
+				//initialize and iterate through snippets
+				for (var i = 0; i < snippets.length; i++) {
+					snippets.item(i).style.maxWidth = snippetCalcImageWidthEqualArea(snippets.item(i)); 
+				}
+			
+			}
+			
+			
+			
+			/* snippet distribution */
+			function snippetDistribute() {
+			
+				/* metrics */
+				let distributeMarginLeft = 100;
+				let distributeMarginTop = 100;
+				let distributeMarginRight = 600;
+				let distributeMarginBottom = 600;
+				
+				/* math */
+				
+				function vector(distance,angle) {
+					let angleRadians = Math.sin(angle * Math.PI / 180);
+					
+					let xPos = distance * Math.cos(angleRadians)
+					let yPos = distance * Math.sin(angleRadians)
+					
+					return[xPos,yPos]
+				}
+				
+				function randomBetween(min,max) {
+					let value = Math.floor(Math.random() * (max - min)) + min;
+					
+					return value;
+				}
+			
+				/* angles and distance */
+				function distance() {
+					let distributeDistanceMin = 0;
+					let distributeDistanceMax = 0;
+					let distributeDistance = randomBetween(distributeDistanceMin,distributeDistanceMax);
+					
+					return distributeDistance;
+				}
+				
+				/* move */
+				for (i=0; i < snippets.length; i++) {
+					if (i == 0) {
+					
+						//get original position before absolute
+					
+						snippets[i].style.position = "absolute";
+
+						snippets[i].style.top = distributeMarginTop;
+						snippets[i].style.left = distributeMarginLeft;
+					} else {
+						rootRandom = Math.floor(Math.random(2));
+					}
+				}
+			}
+			
+			
+			
+			
+			
+			/* snippet draw */
+			function snippetDraw() {
+				snippetGenerate();
+				snippetSetImageWidthEqualArea();
+				snippetDistribute();
+			}
+			
+			//only set snippet sizes on page load
+			if (snippetAmountMax > 0) {
+				window.onload = snippetDraw();
+			}
+	</script>
+</body>

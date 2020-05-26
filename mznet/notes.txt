@@ -1,0 +1,31 @@
+﻿##early work
+300x237 = 71100
+
+weighted though
+
+based on aspect ratio, not pixels
+set max-width per snippet
+
+##name
+mozhnet можнет მოჟნიეთ
+
+
+
+##java
+1:1 215px tall and wide
+* 46,225px total area
+
+##area
+a = w * h
+w = a / h
+h = a / w
+
+##ratio
+1. find aspect ratio
+
+RatioHeight:RatioWidth
+
+w^2 = Area * Rw/Rh = Ans
+
+
+
