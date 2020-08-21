@@ -248,13 +248,16 @@ a.button:hover {
 }
 
 .accessory {
-	margin-left: 3em;
+	--accessory-width: 200px;
+	--accessory-margin: 3.5em;
+	
+	margin-left: var(--accessory-margin);
 	
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: flex-start;
 }
 
 .accessory .button {
@@ -509,7 +512,7 @@ figure {
 /* mobile */
 @media only screen and (max-width: 600px) {
 	.mobile {
-		display: initial;
+		display: inherit;
 	}
 	
 	main {
@@ -551,6 +554,11 @@ figure {
 	.action {
 		margin-bottom: 0.3em;
 	}
+	
+	.accessory {
+		--accessory-margin: 3em;
+		align-items: flex-end;
+	}
 }
 
 @media only screen and (max-width: 350px) {
@@ -567,6 +575,12 @@ figure {
 	
 	.banner p {
 		width: 40%;
+	}
+	
+	.accessory {
+		width: var(--accessory-width);
+		float: right;
+		margin-right: calc(calc(var(--accessory-width) + var(--accessory-margin)) * -1);
 	}
 }
 
