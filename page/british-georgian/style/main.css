@@ -288,7 +288,7 @@ a.banner {
 	flex-direction: column;
 	box-sizing: border-box;
 	
-	padding: 20px var(--content-sides);
+	padding: 17px calc(var(--content-sides) * 1.5);
 	margin-bottom: -1px;
 	
 	border: 1px solid rgba(0,0,0,0.3);
@@ -353,6 +353,8 @@ a.banner:hover {
 .banner .action {
 	--action-time: 500ms;
 	--action-bezier: cubic-bezier(0,1.01,.85,1);
+	
+	margin-bottom: 0.3em;
 	
 	display: flex;
 	flex-wrap: nowrap;
@@ -444,6 +446,16 @@ a .line-container label {
 	font-size: 12px;
 }
 
+article img {
+	width: 100%;
+}
+
+article img.left {
+	max-width: 300px;
+	margin: 16px 0;
+	float:left;
+}
+
 
 
 
@@ -485,6 +497,7 @@ a .line-container label {
 		margin-right: calc(var(--content-sides) * -1);
 		border-left: none;
 		border-right: none;
+		padding: 25px var(--content-sides);
 		
 		min-height: 350px;
 	}
