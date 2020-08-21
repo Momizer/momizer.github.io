@@ -304,6 +304,8 @@ a.banner {
 }
 
 footer {
+	clear: both;
+	display: block;
 	color: var(--color-subtext);
 	
 	font-size: 12px;
@@ -324,6 +326,7 @@ h1 {
 }
 
 h2 {
+	margin-top: 1.5em;
 	font-family: 'Helvetica LT Std', arial, sans-serif;
 	font-size: 20px;
 	font-weight: 300;
@@ -450,12 +453,28 @@ article img {
 	width: 100%;
 }
 
-article img.left {
+article .left {
 	max-width: 300px;
 	margin: 16px 0;
-	float:left;
+	float: left;
 }
 
+article .right {
+	max-width: 300px;
+	margin: 16px 0;
+	float: right;
+}
+
+figcaption, p.subtext {
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
 
 
 
