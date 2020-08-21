@@ -476,6 +476,26 @@ figure {
 	margin-top: 0;
 }
 
+.file-box {
+	background-color: #F0F0F4;
+	margin: 1em -1px 1.5em -1px;
+	border-radius: 20px;
+	padding: 20px 0px 0px 20px;
+	
+	display: flex;
+	flex-basis: 200px;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.file-box .file {
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background-color: #E0E0EF;
+	padding: 10px;
+	border-radius: 7px;
+}
+
 
 
 
