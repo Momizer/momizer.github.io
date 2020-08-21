@@ -297,6 +297,8 @@ a.banner {
 	/* background: linear-gradient(0deg, var(--color-english-blue) 0%, rgba(0,0,0,0) 100%); */
 	color: var(--color-banner-color);
 	text-decoration: none;
+	background-position: center;
+	background-size: cover;
 }
 
 .banner + .banner {
