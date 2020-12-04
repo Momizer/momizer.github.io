@@ -1,0 +1,268 @@
+/* fonts */
+@font-face {
+    font-family: 'Helvetica LT Std Cond';
+    src: local('Helvetica LT Std Black Condensed Oblique'), local('HelveticaLTStd-BlkCondObl'),
+        url('../font/HelveticaLTStd-BlkCondObl.woff2') format('woff2'),
+        url('../font/HelveticaLTStd-BlkCondObl.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* variables */
+:root {
+	--main-max-width: 800px;
+	
+
+	
+	--color-orange: #e66824;
+	--color-orange-dark: #A62800;
+	--color-yellow: #ecb721;
+	--color-blue: #006bab;
+	--color-blue-dark: #131c28;
+	--color-cyan: #0698a5;
+	--color-gray: #dce0e2;
+	
+	--color-text-light: white;
+	--color-text-dark: var(--color-blue-dark);
+	
+	--header-padding-sides: 50px;
+	--header-padding-vertical: 48px;
+	
+	--content-max-width: 800px;
+	
+	--section-vertical-spacing: 105px;
+	
+	
+	
+	--font-subtext-family: arial, sans-serif;
+	--font-subtext-size: 14px;
+	--font-subtext-weight: normal;
+	
+	--font-body-family: "Tofino Pro Personal Text", sans-serif;
+	--font-body-size: 18px;
+	--font-body-weight: 300;
+	--font-body-line-height: 1.55em;
+	--font-body-letter-spacing: -0.5px;
+	
+	--font-button-family: "Tofino Pro Personal Medium", sans-serif;
+	
+	--font-heading1-family: "Tofino Pro Personal Wide", sans-serif;
+	--font-heading1-size: 68px;
+	--font-heading1-weight: 900;
+	--font-heading1-line-height: 0.98em;
+	--font-heading1-letter-spacing: 2.15px;
+}
+
+/* elements */
+body {
+	margin: 0;
+	min-width: 300px;
+	
+	font-family: var(--font-subtext-family);
+	font-size: var(--font-subtext-size);
+	font-weight: var(--font-subtext-weight);
+	font-variant-ligatures: none;
+}
+
+main {
+	--main-width-max: 1100px;
+}
+
+header {
+	padding: var(--header-padding-vertical) var(--header-padding-sides);
+}
+
+section#hero {
+	--hero-height: 82vh;
+	
+	--margin-width: calc(calc(100vw - var(--main-max-width)) / 3);
+	
+	height: var(--hero-height);
+	
+	display: grid;
+	grid-template-columns: [margin-left] var(--margin-width) [column-left] auto [column-right] 1fr [margin-right] var(--margin-width);
+	grid-template-rows: [header] auto [content] auto;
+	grid-template-areas: 'margin-left column-left column-right margin-right';
+	grid-gap: 3rem;
+	
+	overflow: hidden;
+	color: var(--color-gray);
+	background-color: var(--color-blue-dark);
+}
+
+nav {
+	display: inline;
+}
+
+nav ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline;
+	padding-right: 2.3rem;
+}
+
+section#hero .logo {
+	margin-top: var(--header-padding-vertical);
+	margin-left: var(--header-padding-sides);
+	margin-right: var(--header-padding-sides);
+	margin-bottom: var(--header-padding-vertical);
+	
+	display: inline-block;
+	
+	grid-column-start: margin-left;
+	grid-column-end: margin-left;
+	grid-row-start: header;
+	grid-row-end: header;
+}
+
+section#hero nav {
+	margin-top: var(--header-padding-vertical);
+	
+	grid-column-start: column-left;
+	grid-column-end: column-left;
+	grid-row-start: header;
+	grid-row-end: header;
+}
+
+section#hero .text-intro {
+	padding-bottom: var(--section-vertical-spacing);
+	max-width: 500px;
+	
+	grid-column-start: column-left;
+	grid-column-end: column-left;
+	grid-row-start: content;
+	grid-row-end: content;
+	
+	align-self: end;
+}
+
+section#hero .hero-image {
+	--overflow-top: 0px;
+	--overflow-right: 190px;
+	--overflow-bottom: 0px;
+	--overflow-left: 0px;
+	
+	width: calc(100% + var(--overflow-left) + var(--overflow-right));
+	min-width: 900px;
+	margin: calc(var(--overflow-top) * -1) calc(var(--overflow-right) * -1) calc(var(--overflow-bottom) * -1) calc(var(--overflow-left) * -1);
+	
+	grid-column-start: column-right;
+	grid-column-end: margin-right;
+	grid-row-start: header;
+	grid-row-end: span 2;
+	
+	background-image: url("../image/staraplex logo collage hero.svg");
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+section#hero p {
+	width: 87%;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: var(--color-orange);
+}
+
+a:active, a:target, a:focus {
+	color: var(--color-orange-dark);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	margin-bottom: 1.5rem;
+	
+	font-family: var(--font-heading1-family);
+	font-size: var(--font-heading1-size);
+	font-weight: var(--font-heading1-weight);
+	text-transform: uppercase;
+	line-height: var(--font-heading1-line-height);
+	letter-spacing: var(--font-heading1-letter-spacing);
+}
+
+.blue {
+	color: var(--color-blue);
+}
+
+.orange {
+	color: var(--color-orange);
+}
+
+p {
+	font-family: var(--font-body-family);
+	font-size: var(--font-body-size);
+	font-weight: var(--font-body-weight);
+	line-height: var(--font-body-line-height);
+	letter-spacing: var(--font-body-letter-spacing);
+}
+
+.button {
+	margin: 0.35em -0.6em;
+	padding: 0.25em 1.2em 0.35em 1.2em;
+	display: inline-block;
+	
+	font-family: var(--font-button-family);
+	font-size: var(--font-body-size);
+	font-weight: var(--font-body-weight);
+	line-height: var(--font-body-line-height);
+	
+	color: var(--color-orange);
+	border: 1.5px solid var(--color-orange);
+	border-radius: 1000px;
+}
+
+a:hover .button {
+	background-color: var(--color-orange);
+	color: var(--color-blue-dark);
+}
+
+a:active .button {
+	color: var(--color-blue-dark);
+	border-color: var(--color-orange-dark);
+	background-color: var(--color-orange-dark);
+}
+
+.steps section {
+	height: 200px;
+	padding-top: var(--section-vertical-spacing);
+	padding-bottom: var(--section-vertical-spacing);
+}
+
+.steps section:nth-child(odd) {
+	background-color: var(--color-gray);
+}
+
+.steps section:last-child {
+	background-color: var(--color-blue-dark);
+	color: var(--color-text-light);
+}
+
+.steps section:last-child h2 {
+	color: var(--color-orange);
+}
+
+h2 {
+	margin: 0;
+}
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+	
+}
+
+/* desktop */
+@media only screen and (min-width: 601px) {
+	
+}
+
