@@ -54,7 +54,7 @@
 	--font-heading1-line-height: 0.98em;
 	--font-heading1-letter-spacing: 2.15px;
 	
-	--font-heading2-family: Tofino Pro Personal Nar Md, Arial Narrow, sans-serif;
+	--font-heading2-family: "Tofino Pro Personal Narrow", Arial Narrow, sans-serif;
 	--font-heading2-size: 72px;
 	--font-heading2-weight: 400;
 	--font-heading2-line-height: 0.98em;
@@ -149,6 +149,8 @@ section#hero .text-intro, .steps section .prompt, section#live .text-outro {
 	
 	grid-column-start: column-left;
 	grid-column-end: column-left;
+	
+	z-index: 10;
 }
 
 .steps section .prompt p {
@@ -282,12 +284,12 @@ a:active .button {
 
 .steps li {
 	padding-left: 1em; 
-	text-indent: -.7em;
+	text-indent: -1em;
 }
 
 .steps li::before {
 	content: "⬤";
-	padding-right: 1.4em;
+	padding-right: 1.1em;
 	color: #e66824; /* or whatever color you prefer */
 	font-size: 0.5em;
 	vertical-align: top;
@@ -497,8 +499,57 @@ section#live footer a {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+	:root {
+		--font-body-size: 14px;
+		--font-body-letter-spacing: -0.1px;
+		
+		--font-heading1-size: 57px;
+		--font-heading1-letter-spacing: 2.15px;
+		
+		--font-heading2-size: 35px;
+		--font-heading2-letter-spacing: 2.2px;
+	}
 	
+	section#hero .hero-image {
+		--overflow-top: -40px;
+		--overflow-right: 300px;
+		--overflow-left: -150px;
+		grid-column-start: column-left;
+		
+		background-image: url("../image/staraplex logo collage hero dark.svg");
+	}
+	
+	section#hero, .steps section, section#live {
+		grid-gap: 0rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	
+	section#hero .logo {
+		max-width: 220px;
+	}
+	
+	section#hero .text-intro, .steps section .prompt, section#live .text-outro {
+		max-width: unset;
+	}
+	
+	section#hero p {
+		max-width: 305px;
+	}
+	
+	section#hero nav {
+		margin-top: calc(var(--header-padding-vertical) * 2.5);
+		/* display: none; */
+	}
+	
+	.steps h2 br {
+		display:unset;
+	}
+	
+	.steps li {
+		margin-bottom: 0.5em;
+	}
 }
 
 /* desktop */
