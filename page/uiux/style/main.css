@@ -71,6 +71,7 @@ h1 {
 
 h2 {
 	margin: 0.2em 0;
+	margin-left: -0.05ch;
 	
 	font-family: "Pragmatica", arial unicode, sans-serif;
 	font-size: var(--heading2-font-size);
@@ -186,6 +187,7 @@ section.invert {
 	
 	background-color: var(--color-background-invert);
 	color: var(--color-background-light);
+	border-color: var(--color-background);
 }
 
 section.white {
@@ -542,11 +544,21 @@ table.list-container img {
 	100%	{opacity: 1;}
 }
 
+.blinklong {
+	animation: blink 3.3s step-end infinite;
+}
+
+@keyframes blinklong {
+	0%		{opacity: 0;}
+	50%		{opacity: 1;}
+	100%	{opacity: 1;}
+}
+
 button .badge {
 	min-height: 1.5em;
 	min-width: 1.5em;
 	margin-left: 0.5ch;
-	padding: 2px 4px 0px 3px;
+	padding: 1.8px 4px 0px 3px;
 	display: inline-block;
 	
 	font-size: var(--font-size-tiny);
