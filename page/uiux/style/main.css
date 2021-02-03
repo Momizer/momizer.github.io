@@ -177,6 +177,8 @@ article {
 	max-width: var(--article-width);
 	margin: 0 var(--main-padding-sides);
 	padding-bottom: var(--section-padding-vertical);
+	
+	/* flex-basis: var(--article-width); */
 }
 
 article.order {
@@ -187,6 +189,8 @@ article.order {
 section {
 	padding-top: var(--section-padding-vertical);
 	border-bottom: 1px solid var(--color-background-light);
+	/* display: flex; */
+	/* flex-wrap: wrap; */
 }
 
 section.invert {
@@ -239,6 +243,10 @@ section.side {
 	padding-bottom: calc(var(--section-padding-vertical) - 3rem);
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(var(--snippet-max-size), 1fr));
+}
+
+.snippets {
+	flex-wrap: nowrap;
 }
 
 .card-box {
@@ -358,6 +366,10 @@ button:active, button:target, button.active {
 	margin-top: 0.5em;
 	margin-bottom: -1px;
 	margin-left: -10px;
+}
+
+.tabs .tab:not(:first-child) {
+	background-color: var(--color-background-dark);
 }
 
 .tabs .tab {
@@ -711,6 +723,19 @@ button .badge {
 	color: white;
 	background-color: black;
 	border-radius: 3px;
+}
+
+ul.list-page  {
+	margin: 0;
+	padding-left: 0px;
+	list-style-type: none;
+}
+
+ul.list-page li {
+	padding: 6px 0px;
+	font-size: 13.333333px;
+	font-family: verdana, sans-serif;
+	border-bottom: 1px solid var(--color-background);
 }
 
 /* mobile */
