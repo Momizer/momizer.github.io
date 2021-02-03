@@ -738,6 +738,21 @@ ul.list-page li {
 	border-bottom: 1px solid var(--color-background);
 }
 
+.ul.list-page li:last-child {
+	color: red;
+}
+
+.interrupt {
+	min-width: 250px;
+	min-height: 100px;
+	margin: 2em 0em;
+	padding: 3em;
+	text-align: center;
+	
+	background-color: white;
+	border: 1px solid var(--color-background);
+}
+
 /* mobile */
 @media only screen and (max-width: 1200px) {
 	
