@@ -35,9 +35,10 @@
 	--color-background: #EbE6E4; /*DbE6E4*/
 	--color-background-light: white;
 	--color-background-dark: #DCD6D4;
-	--color-background-invert: #3b6664;
+	--color-background-invert: #6b6664; /*#3b6664*/
 	
-	--color-heading-sub: #576f62;
+	--color-active-green: #377f72;
+	--color-heading-sub: var(--color-active-green);
 	
 	--color-nav-light: #F5F5F5;
 	--color-nav-dark: #CECCCC;
@@ -96,6 +97,10 @@ h2 {
 	line-height: 1.28em;
 	
 	color: var(--color-heading-sub);
+}
+
+h2.main {
+	color: var(--color-active-green);
 }
 
 h3 {
@@ -206,6 +211,12 @@ section {
 	/* display: flex; */
 	/* flex-wrap: wrap; */
 }
+
+/*
+section:not(.invert):not(.white) {
+	--color-heading-sub: #8b8684;
+}
+*/
 
 section.invert {
 	--color-heading-sub: #DFDDDD;
@@ -597,6 +608,10 @@ input[type="text"]:focus::placeholder, textarea:focus::placeholder, .switch:focu
 	display: inline;
 }
 
+.comment-large {
+	color: var(--color-active-green);
+}
+
 .comment-large textarea	 {
 	resize: vertical;
 }
@@ -683,7 +698,7 @@ table.list-container img {
 	margin: 0.5em 0em;
 	padding: 1px;
 	
-	border: 1px solid black;
+	border: 1px solid var(--color-heading-sub);
 }
 
 .progress .bar {
@@ -693,8 +708,8 @@ table.list-container img {
 	position: relative;
 	display: inline-block;
 	
-	background-color: black;
-	border: 1px solid black;
+	background-color: var(--color-heading-sub);
+	border: 1px solid var(--color-heading-sub);
 }
 
 .progress.long .bar {
@@ -819,6 +834,10 @@ ul.list-page li {
 	section.side.table .table-box {
 		margin: 0;
 	}
+	
+	table.list-container {
+		--table-cell-spacing: 1em;
+	}
 }
 
 @media only screen and (max-width: 450px) {
@@ -834,3 +853,12 @@ ul.list-page li {
 		--main-padding-sides: 10px;
 	}
 }
+
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	::root {
+		--font-size-default: 15px;
+		--font-size-tiny: 20px;
+	}
+}
+*/
