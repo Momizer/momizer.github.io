@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 334.9 258" style="enable-background:new 0 0 334.9 258;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:2.0002,4.0005;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:1.9541,3.9082;}
+	.st6{fill:none;}
+</style>
+<image style="overflow:visible;" width="92" height="59" xlink:href="D868D68E.jpg"  transform="matrix(1 0 0 1 -7886 -7796)">
+</image>
+<g>
+	<defs>
+		<circle id="SVGID_1_" cx="129" cy="129" r="129"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st0">
+		<path class="st1" d="M129,129L157.4,3.1C148.3,1.1,138.8,0,129,0C57.8,0,0,57.8,0,129s57.8,129,129,129
+			c61.5,0,112.9-43,125.9-100.6L129,129z"/>
+	</g>
+</g>
+<g>
+	<line class="st1" x1="129" y1="0" x2="129" y2="258"/>
+	<g>
+		<line class="st2" x1="129" y1="0" x2="129" y2="1"/>
+		<line class="st3" x1="129" y1="5" x2="129" y2="255"/>
+		<line class="st2" x1="129" y1="257" x2="129" y2="258"/>
+	</g>
+</g>
+<circle class="st4" cx="129" cy="129" r="129"/>
+<g>
+	<line class="st1" x1="129" y1="129" x2="0" y2="129"/>
+	<g>
+		<line class="st2" x1="129" y1="129" x2="128" y2="129"/>
+		<line class="st5" x1="124.1" y1="129" x2="3" y2="129"/>
+		<line class="st2" x1="1" y1="129" x2="0" y2="129"/>
+	</g>
+</g>
+<g>
+	<path class="st6" d="M129,129"/>
+</g>
+<g>
+	<path class="st6" d="M258,129"/>
+</g>
+</svg>

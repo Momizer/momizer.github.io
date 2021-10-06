@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+	background-color: #eee6e4;
+	overflow-x: hidden;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 1920px;
+}
+
+img.desktop {
+	width: 1920px;
+	transform: translate(-50%,0);
+	left: 50%;
+	position: absolute;
+}
+
+img.mobile {
+	width: 100%;
+}
+
+@media only screen and (min-width: 500px) {
+	.desktop {
+		display: initial;
+	}
+	
+	.mobile {
+		display: none;
+	}
+}
+
+
+@media only screen and (max-width: 500px) {
+	.desktop {
+		display: none;
+	}
+	
+	.mobile {
+		display: initial;
+	}
+}
