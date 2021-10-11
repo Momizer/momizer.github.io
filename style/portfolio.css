@@ -36,6 +36,14 @@ main {
 	padding: 0 var(--main-padding-sides) 0 var(--main-padding-sides);
 }
 
+a:link, a:visited {
+	color: #3E5253;
+}
+
+a:hover {
+	color: #55A386;
+}
+
 .project hgroup h2 {
 	font-size: 10px;
 	font-weight: normal;
@@ -72,6 +80,10 @@ header {
 header .header-group {
 	/* padding-top: var(--header-padding-top); */
 	max-height: 400px;
+}
+
+header hgroup {
+	margin-top: var(--group-spacing);
 }
 
 .column-group {
@@ -150,8 +162,8 @@ header .header-group {
 
 /* f64 */
 
-.project#f64 .column-group#group-introduction {
-	--poster-constant: 1.5;
+.project#f64 .column-group#group-posters {
+	--poster-constant: 3; /*1.4*/
 	
 	--poster-aspect-ratio: 1.532;
 	--poster-span: 2;
@@ -163,8 +175,9 @@ header .header-group {
 		"text-introduction 	image-bokeh 		image-bokeh 		text-description 	text-description"
 		"text-introduction 	image-bokeh 		image-bokeh 		text-bokeh 			.				"
 		"text-introduction 	image-bokeh 		image-bokeh 		image-aberration 	image-aberration"
+		"text-introduction 	.			 		.			 		image-aberration 	image-aberration"
 		"text-introduction 	image-distortion 	image-distortion 	image-aberration 	image-aberration"
-		"text-introduction 	image-distortion 	image-distortion 	text-distortion 	.";
+		"text-introduction 	image-distortion 	image-distortion 	text-distortion 	text-aberration	";
 		
 	grid-template-rows: min-content 1fr var(--poster-overlap) auto var(--poster-overlap);
 }
@@ -193,6 +206,20 @@ header .header-group {
 	align-self: end;
 }
 
+.project#f64 .column-text#text-aberration {
+	grid-column-start: text-aberration-start;
+	grid-column-end: text-aberration-end;
+	grid-row-start: text-aberration-start;
+	grid-row-end: text-aberration-end;
+}
+
+.project#f64 .column-text#text-distortion {
+	grid-column-start: text-distortion-start;
+	grid-column-end: text-distortion-end;
+	grid-row-start: text-distortion-start;
+	grid-row-end: text-distortion-end;
+}
+
 .project#f64 .column-image#image-bokeh {
 	grid-column-start: image-bokeh-start;
 	grid-column-end: image-bokeh-end;
@@ -214,6 +241,9 @@ header .header-group {
 	grid-row-end: image-distortion-end;
 }
 
+.paragraph-group#resume {
+	grid-column-end: span 2;
+}
 
 
 
@@ -242,6 +272,25 @@ header .header-group {
 		grid-template-areas: 
 			"image image image text";
 	}
+	
+	/* f64 */
+	
+	.project#f64 .column-group#group-posters {
+	--poster-constant: 1.4;
+	
+		grid-template-areas: 
+			"text-introduction 	text-description	image-bokeh 		image-bokeh		"
+			".					text-bokeh			image-bokeh 		image-bokeh		"
+			"image-aberration	image-aberration	image-bokeh 		image-bokeh		"
+			"image-aberration 	image-aberration 	image-distortion	image-distortion"
+			"text-aberration 	text-distortion 	image-distortion 	image-distortion";
+			
+		grid-template-rows: min-content 1fr var(--poster-overlap) var(--poster-overlap);
+	}
+	
+	.project#f64 .column-text#text-aberration  {
+		align-self: end;
+	}
 }
 
 /* 3 column breakpoint */
@@ -267,6 +316,21 @@ header .header-group {
 	.project#\32 nd-truth .column-group#group-end {
 		grid-template-areas: 
 			"image image text";
+	}
+	
+	/* f64 */
+	
+	.project#f64 .column-group#group-posters {
+	--poster-constant: 3;
+	
+		grid-template-areas: 
+			"text-introduction 	image-bokeh 		image-bokeh		"
+			"text-description	image-bokeh 		image-bokeh		"
+			"text-bokeh			image-bokeh			image-bokeh 	"
+			"image-aberration 	image-aberration 	text-aberration	"
+			"text-distortion	image-distortion	image-distortion";
+			
+		grid-template-rows: min-content 1fr var(--poster-overlap) auto var(--poster-overlap);
 	}
 }
 
