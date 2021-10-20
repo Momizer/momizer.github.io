@@ -19,6 +19,9 @@
 	--header-height: calc(100vh - var(--header-peek));
 	
 	
+	--root-font-size: 13px;
+	
+	
 	--color-cyan-neutral: #3E5253;
 	--color-cyan-bright: #55A386;
 	
@@ -29,11 +32,15 @@
 body {
 	margin: 0px;
 	
-	font-size: 13px;
+	font-size: var(--root-font-size);
 	font-family: 
 		"BPG Arial", 
 		"Helvetica Now Text Light", 
 		sans-serif;
+		
+	letter-spacing: 0.5px;
+	
+	counter-reset: project-counter;
 }
 
 main {
@@ -50,6 +57,25 @@ a:hover {
 	color: var(--color-cyan-bright);
 }
 
+h1, h2 {
+	font-size: var(--root-font-size);
+	font-weight: 400;
+}
+
+.project hgroup {
+	--counter-spacing: 3rem;
+	
+	padding-left: var(--counter-spacing);
+}
+
+.project hgroup:before {
+	counter-increment: project-counter;
+	content: counter(project-counter) ".";
+	
+	margin-left: calc(var(--counter-spacing) * -1);
+	position: absolute;
+}
+
 .project hgroup h1 {
 	margin-bottom: 0rem;
 }
@@ -61,6 +87,7 @@ a:hover {
 	text-transform: uppercase;
 	
 	margin-bottom: 1.2rem;
+	margin-top: 0.4em;
 }
 
 p, figcaption {
@@ -244,7 +271,6 @@ header img {
 	main.projects {
 		grid-template-columns: [sidebar] var(--column-width) [projects] min-content;
 		grid-column-gap: var(--column-gap);
-		grid-template-rows: 30rem;
 	}
 	
 	main.projects > header {
