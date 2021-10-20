@@ -279,7 +279,7 @@ header img {
 	
 	main.projects .project-list {
 		grid-column-start: projects;
-		grid-row-start: 2;
+		padding-top: var(--group-spacing);
 	}
 	
 	.column-group {
@@ -488,6 +488,18 @@ header img {
 @media only screen and (max-width: 1500px) {
 	:root {
 		--column-amount: 3;
+	}
+	
+	main.projects {
+		grid-template-columns: initial;
+	}
+	
+	main.projects .header-group {
+		position: initial;
+	}
+	
+	main.projects .project-list {
+		padding-top: 0;
 	}
 	
 	.project.concealed {
