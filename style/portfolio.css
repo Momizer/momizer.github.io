@@ -7,12 +7,14 @@
 	--column-amount: 5;
 	--column-width: 19.5rem;
 	--column-gap: 2.9rem;
+	--column-gap-row: var(--column-gap);
 	--column-image-gap: 15px;
+	--column-sidebar-width: 167px;
 	
 	--group-spacing: 5.8rem;
 	--group-spacing-large: calc(var(--group-spacing) * 1.75);
 	
-	--main-max-width: 500px;
+	--main-max-width: calc(calc(var(--column-width) * 2) + var(--column-gap));
 	--main-padding-sides: 40px;
 
 	--header-peek: 300px;
@@ -20,6 +22,9 @@
 	
 	
 	--root-font-size: 13px;
+	--body-x-height-diff: 3px;
+	--heading-margin: calc(var(--root-font-size) * 0.83);
+	--counter-spacing: 3rem;
 	
 	
 	--color-cyan-neutral: #3E5253;
@@ -35,10 +40,11 @@ body {
 	font-size: var(--root-font-size);
 	font-family: 
 		"BPG Arial", 
-		"Helvetica Now Text Light", 
+		"Arial",
 		sans-serif;
 		
 	letter-spacing: 0.5px;
+	line-height: 16px;
 	
 	counter-reset: project-counter;
 }
@@ -60,12 +66,14 @@ a:hover {
 h1, h2 {
 	font-size: var(--root-font-size);
 	font-weight: 400;
+	
+	margin-top: var(--heading-margin);
+	margin-bottom: var(--heading-margin);
 }
 
 .project hgroup {
-	--counter-spacing: 3rem;
-	
 	padding-left: var(--counter-spacing);
+	margin-bottom: calc(var(--heading-margin) + var(--root-font-size));
 }
 
 .project hgroup:before {
@@ -74,6 +82,8 @@ h1, h2 {
 	
 	margin-left: calc(var(--counter-spacing) * -1);
 	position: absolute;
+	
+	font-family: "Helvetica Now Text Light";
 }
 
 .project hgroup h1 {
@@ -81,13 +91,24 @@ h1, h2 {
 }
 
 .project hgroup h2 {
-	font-size: 10px;
+	font-size: 10.1px;
+	font-family: "Helvetica Now Micro Light";
+		
 	font-weight: normal;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
-	
-	margin-bottom: 1.2rem;
-	margin-top: 0.4em;
+	margin-top: 1px;
+	margin-bottom: 0px;
+}
+
+.project hgroup h2.justify:not(.multi-line) {
+	text-align: justify;
+	text-align-last: justify;
+	text-justify: inter-character;
+}
+
+.project hgroup:before, .project hgroup h2 {
+	font-feature-settings: "tnum", "ss01", "ss02", "ss03", "ss05", "ss07";
 }
 
 p, figcaption {
@@ -97,7 +118,7 @@ p, figcaption {
 	text-align: justify;
 	text-justify: inter-character;
 	hyphens: auto;
-	letter-spacing: 0.4px;
+	orphans: 2;
 }
 
 figcaption {
@@ -131,6 +152,24 @@ figcaption.left:before {
 	padding-right: var(--char-spacing);
 }
 
+.project hgroup *:not(.multi-line) span.tag:not(:first-of-type):before {
+	--tag-bullet-space: 0.36ch;
+	
+	content:"·";
+	margin-left: var(--tag-bullet-space);
+	margin-right: var(--tag-bullet-space);
+}
+
+.project hgroup .multi-line span.tag {
+	--tag-hanging-indent: 2ch;
+	margin-left: var(--tag-hanging-indent);
+	text-indent: calc(var(--tag-hanging-indent) * -1);
+	display: block;
+	
+	text-align: justify;
+	text-justify: inter-character;
+}
+
 span.tied {
 	display: inline-block;
 }
@@ -138,12 +177,7 @@ span.tied {
 
 
 header {
-	padding-top: var(--group-spacing);
 	margin-bottom: var(--group-spacing-large);
-}
-
-header .header-group {
-	max-height: 400px;
 }
 
 header hgroup {
@@ -245,32 +279,45 @@ header img {
 	grid-auto-flow: column;
 }
 
-
-
-
-
-/* SLEEPY NOTE: ALLOW OPENING BY JUST CLICKING ON TEXT OR IMAGE BUT JUST ALLOW ONLY ONE TO BE OPEN AT A TIME */
-/* GENERATE STATIC PAGES FOR ALL ARTICLES (FOR MIDDLE CLICK STATIC LINKING)*/
-/* press header to reclose*/
-
-
-.expanded {
-	background-color: var(--color-cyan-brg);
+.project hgroup + p:first-of-type {
+	text-indent: var(--counter-spacing);
 }
+
 
 
 /* css grid override */
 
-@media only screen and (min-width: 500px) {
+/* sidebar */
+@media only screen and (min-width: 1138px) {
+	
 	main {
 		max-width: initial;
 		display: grid;
 		justify-content: center;
 	}
 	
+	main.projects .header-group {
+		position: fixed;
+		width: var(--column-sidebar-width);
+	}
+}
+
+/* no sidebar */
+@media only screen and (max-width: 1137px) {
 	main.projects {
-		grid-template-columns: [sidebar] var(--column-width) [projects] min-content;
-		grid-column-gap: var(--column-gap);
+		--main-max-width: calc(calc(calc(var(--column-width-laptop) + var(--column-gap)) * var(--column-amount)) - var(--column-gap));
+	}
+}
+
+/* above mobile */
+@media only screen and (min-width: 885px) {
+	
+	main.projects {
+		--column-gap-main: calc(var(--column-gap) * 2);
+		
+		grid-template-columns: [sidebar] minmax(var(--column-sidebar-width), var(--column-width)) [projects] min-content;
+		grid-column-gap: var(--column-gap-main);
+		grid-template-rows: min-content;
 	}
 	
 	main.projects > header {
@@ -279,13 +326,17 @@ header img {
 	
 	main.projects .project-list {
 		grid-column-start: projects;
-		padding-top: var(--group-spacing);
 	}
 	
 	.column-group {
 		display: grid;
 		grid-template-columns: repeat(var(--column-amount), var(--column-width));
-		grid-gap: var(--column-gap);
+		grid-column-gap: var(--column-gap);
+		grid-row-gap: var(--column-gap-row);
+	}
+	
+	.column-group + .column-group {
+		margin-top: var(--column-gap);
 	}
 	
 	.column-text {
@@ -332,10 +383,6 @@ header img {
 	.project#\32 nd-truth .column-group#group-end {
 		grid-template-areas: 
 			". image image image text";
-	}
-
-	.project#\32 nd-truth .column-image#image-open {
-		grid-template-columns: 1fr 1fr;
 	}
 
 	/* f64 */
@@ -423,29 +470,76 @@ header img {
 	.paragraph-group#resume {
 		grid-column-end: span 2;
 	}
-
 }
 
+/* up to mobile */
+@media only screen and (max-width: 884px) {
+	:root {
+		--column-gap: calc(2.9rem * 0.5);
+		
+		--main-max-width: calc(calc(var(--column-width) * 2) + var(--column-gap));
+	}
+	
+	main.projects header .header-group {
+		position: initial;
+	}
+	
+	.column-group + .column-group {
+		margin-top: calc(var(--column-image-gap) + var(--body-x-height-diff));
+	}
+	
+	.column-image {
+		margin-bottom: calc(var(--column-image-gap) * 2);
+	}
+	
+	.column-text {
+		column-count: 2;
+		column-gap: var(--column-image-gap);
+	}
+	
+	.column-image {
+		margin-top: calc(var(--column-image-gap) + var(--body-x-height-diff));
+	}
+	
+	figcaption {
+		/* fix figcaption margins */
+		margin-bottom: var(--root-font-size);
+	}
+	
+	.project hgroup {
+		column-span: all;
+	}
+}
+
+/* above mobile small */
+@media only screen and (min-width: 700px) {
+	.project#\32 nd-truth .column-image#image-open {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* up to mobile small */
+@media only screen and (max-width: 699px) {
+	.column-text {
+		column-count: 1;
+	}
+}
 
 
 
 
 /* 4 column breakpoint */
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 2200px) {
 	:root {
 		--column-amount: 4;
-	}
-	
-	main.projects .header-group {
-		position: fixed;
 	}
 	
 	.project.concealed {
 		grid-template-areas: "intro image image image-large";
 	}
 	
-	/* specific 3-column grid layouts */
+	/* specific 4-column grid layouts */
 
 	/* 2nd-truth */
 
@@ -485,20 +579,16 @@ header img {
 
 /* 3 column breakpoint */
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1743px) {
 	:root {
 		--column-amount: 3;
 	}
 	
-	main.projects {
-		grid-template-columns: initial;
-	}
-	
-	main.projects .header-group {
-		position: initial;
-	}
-	
 	main.projects .project-list {
+		padding-top: 0;
+	}
+	
+	header {
 		padding-top: 0;
 	}
 	
@@ -545,59 +635,103 @@ header img {
 	}
 	
 	.project#f64 .column-text#text-description {
-		margin-top: calc(var(--column-gap) * -1);
-	}
-	
-	
-	/* TEMPORARY */
-	.preview-image.horizontal.triple {
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 179px;
-		grid-auto-flow: column;
-	}
-	
-	.preview-image.horizontal.triple  > img:nth-child(1) {
-		grid-row-end: span 2;
+		margin-top: calc(var(--column-gap-row) * -1);
 	}
 }
 
-/* 1-2 column breakpoint */
+/* laptop breakpoint */
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1385px) {
 	:root {
-		--column-amount: 2;
+		--column-amount: 7;
+		--column-width-laptop: 4.56rem;
+		--column-gap-row: var(--column-image-gap);
 	}
-
-	main {
-		max-width: 700px;
-		margin: 0 auto;
+	
+	.project hgroup {
+		margin-bottom: 1em;
+		column-span: all;
 	}
-
+	
+	.project hgroup h2.justify:not(.multi-line) {
+		text-align-last: unset;	
+	}
+	
 	.column-group {
-		display: block;
+		grid-template-columns: repeat(var(--column-amount), var(--column-width-laptop));
 	}
 	
-	.project.concealed .preview-image {
-		margin-left: 0;
-		margin-right: 0;
+	/* specific laptop-column grid layouts */
+
+	/* 2nd-truth */
+
+	/* 2nd-truth "introduction" */
+
+	.project#\32 nd-truth .column-group#group-introduction {
+		grid-template-areas: 
+			"text text text image image image image";
+	}
+
+	/* 2nd-truth "end" */
+
+	.project#\32 nd-truth .column-group#group-end {
+		grid-template-areas: 
+			"image image image image text text text";
 	}
 	
-	/* TEMPORARY */
-	.preview-image.horizontal.triple {
-		grid-template-columns: 1fr 111px;
+	/* f64 */
+	
+	.project#f64 .column-group#group-posters {
+	--poster-constant: 3;
+	
+		grid-template-areas: 
+			"text-introduction	text-introduction	text-introduction 	image-bokeh 		image-bokeh			image-bokeh			image-bokeh"
+			"text-description	text-description	text-description	image-bokeh 		image-bokeh			image-bokeh			image-bokeh"
+			"text-bokeh			text-bokeh			text-bokeh			image-bokeh			image-bokeh 		image-bokeh			image-bokeh"
+			"image-aberration 	image-aberration	image-aberration	image-aberration	text-aberration		text-aberration		text-aberration"
+			"text-distortion	text-distortion		text-distortion		image-distortion	image-distortion 	image-distortion 	image-distortion"
+			".					.					.					image-distortion	image-distortion	image-distortion	image-distortion";
+			
+		grid-template-rows: min-content 1fr var(--poster-overlap) auto var(--poster-overlap);
 	}
 }
 
-@media only screen and (max-width: 600px) {
-	.project#\32 nd-truth .column-image#image-open img {
-		grid-column: 1 / -1;
+/* height */
+
+@media only screen and (min-height: 900px) {
+	main.projects .project-list {
+		grid-column-start: projects;
+		padding-top: var(--group-spacing);
 	}
 	
-	/* TEMPORARY */
-	.preview-image.horizontal.triple {
-		grid-template-columns: 1fr 91px;
+	header {
+		padding-top: var(--group-spacing);
+		margin-bottom: var(--group-spacing-large);
 	}
 }
 
+
+
+/* DPR */
+
+@media (-webkit-max-device-pixel-ratio: 1.1) {
+	.project hgroup:before {
+		font-family: "Helvetica Now Text";
+		font-size: 12px;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.1) {
+	body {
+		font-family: 
+			"Helvetica Now Text Light", 
+			"BPG Arial", 
+			"Arial",
+			sans-serif;
+			
+		letter-spacing: 0.3px;
+		word-spacing: 0px;
+	}
+}
 
 
