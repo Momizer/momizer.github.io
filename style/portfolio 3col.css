@@ -577,9 +577,71 @@ header img {
 	}
 }
 
-/* laptop breakpoint */
+/* 3 column breakpoint */
 
 @media only screen and (max-width: 1743px) {
+	:root {
+		--column-amount: 3;
+	}
+	
+	main.projects .project-list {
+		padding-top: 0;
+	}
+	
+	header {
+		padding-top: 0;
+	}
+	
+	.project.concealed {
+		grid-template-areas: "intro image image";
+	}
+	
+	.project.concealed .preview-image.small  {
+		margin-right: 0;
+	}
+	
+	/* specific 3-column grid layouts */
+
+	/* 2nd-truth */
+
+	/* 2nd-truth "introduction" */
+
+	.project#\32 nd-truth .column-group#group-introduction {
+		grid-template-areas: 
+			"text image image";
+	}
+
+	/* 2nd-truth "end" */
+
+	.project#\32 nd-truth .column-group#group-end {
+		grid-template-areas: 
+			"image image text";
+	}
+	
+	/* f64 */
+	
+	.project#f64 .column-group#group-posters {
+	--poster-constant: 3;
+	
+		grid-template-areas: 
+			"text-introduction 	image-bokeh 		image-bokeh		"
+			"text-description	image-bokeh 		image-bokeh		"
+			"text-bokeh			image-bokeh			image-bokeh 	"
+			"image-aberration 	image-aberration 	text-aberration	"
+			"text-distortion	image-distortion	image-distortion"
+			".					image-distortion	image-distortion";
+			
+		grid-template-rows: min-content 1fr var(--poster-overlap) auto var(--poster-overlap);
+	}
+	
+	.project#f64 .column-text#text-description {
+		margin-top: calc(var(--column-gap-row) * -1);
+	}
+}
+
+/* laptop breakpoint */
+
+@media only screen and (max-width: 1385px) {
 	:root {
 		--column-amount: 7;
 		--column-width-laptop: 4.56rem;
@@ -636,7 +698,7 @@ header img {
 
 /* height */
 
-@media only screen and (min-height: 700px) {
+@media only screen and (min-height: 900px) {
 	main.projects .project-list {
 		grid-column-start: projects;
 		padding-top: var(--group-spacing);
