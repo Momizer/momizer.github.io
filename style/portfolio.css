@@ -207,7 +207,7 @@ header img {
 	background-color: var(--color-image-bg);
 }
 
-.column-image img.span-all {
+.column-image img.span-all-columns {
 	grid-column: 1 / -1;
 }
 
@@ -273,6 +273,18 @@ header img {
 .preview-image img {
 	width: 100%;
 	display: block;
+}
+
+.project .column-image img {
+	object-fit: cover;
+	max-height: calc(100vh - calc(var(--column-gap) * 1));
+	max-height: max(calc(100vh - calc(var(--column-gap) * 1)), 600px);
+	max-height: calc(100vh - calc(var(--column-gap) * 1));
+}
+
+.project .column-image img {
+	outline: 1px solid rgba(0,0,0,0.1);
+	outline-offset: -1px;
 }
 
 .preview-image.horizontal {
@@ -386,9 +398,13 @@ header img {
 	}
 
 	/* f64 */
+	
+	.project#f64 .column-group img {
+		object-position: 50% 100%;
+	}
 
 	.project#f64 .column-group#group-posters {
-		--poster-constant: 3; /*1.4*/
+		--poster-constant: 1.8;
 		
 		--poster-aspect-ratio: 1.532;
 		--poster-span: 2;
@@ -470,6 +486,88 @@ header img {
 	.paragraph-group#resume {
 		grid-column-end: span 2;
 	}
+	
+	/* ჰელმანი */
+
+	/* ჰელმანი "introduction" */
+
+	.project#ჰელმანი .column-group {
+		grid-template-areas: 
+			"text image image image image";
+	}
+	
+	.project#ჰელმანი .column-group img {
+		align-self: stretch;
+	}
+	
+	.project#ჰელმანი .column-group img#sweatshirt {
+		object-position: 50% 70%;
+	}
+	
+	.project#ჰელმანი .column-group img#litho {
+		object-position: 50% 0%;
+	}
+	
+	/* marlboro */
+
+	/* marlboro "introduction" */
+
+	.project#marlboro .column-group {
+		grid-template-areas: 
+			"text image image image image";
+	}
+	
+	.project#marlboro .column-group img {
+		align-self: stretch;
+	}
+	
+	.project#marlboro .column-group img#poster {
+		object-position: 50% 24%;
+	}
+	
+	.project#marlboro .column-group img#detail {
+		object-position: 50% 38%;
+	}
+	
+	/* dive */
+
+	/* dive "introduction" */
+
+	.project#dive .column-group#group-introduction {
+		grid-template-areas: 
+			"text image image image image";
+	}
+	
+	.project#dive .column-image#image-poster {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* dive "showcase" */
+
+	.project#dive .column-group#group-showcase {
+		grid-template-areas: 
+			". image image image image";
+	}
+
+	/* dive "end" */
+
+	.project#dive .column-group#group-end {
+		grid-template-areas: 
+			". image image image text";
+	}
+	
+	.project#dive .column-image#image-box {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* electro-threads */
+
+	/* electro-threads "introduction" */
+
+	.project#electro-threads .column-group {
+		grid-template-areas: 
+			"text image image image image";
+	}
 }
 
 /* up to mobile */
@@ -513,7 +611,10 @@ header img {
 
 /* above mobile small */
 @media only screen and (min-width: 700px) {
-	.project#\32 nd-truth .column-image#image-open {
+	.project#\32 nd-truth .column-image#image-open,
+	.project#ჰელმანი .column-image, 
+	.project#marlboro .column-image
+	{
 		grid-template-columns: 1fr 1fr;
 	}
 }
@@ -574,6 +675,64 @@ header img {
 	
 	.project#f64 .column-text#text-aberration {
 		align-self: start;
+	}
+	
+	/* ჰელმანი */
+
+	/* ჰელმანი "introduction" */
+
+	.project#ჰელმანი .column-group {
+		grid-template-areas: 
+			"text image image image";
+	}
+	
+	/* marlboro */
+
+	/* marlboro "introduction" */
+
+	.project#marlboro .column-group {
+		grid-template-areas: 
+			"image image image text";
+	}
+	
+	/* dive */
+
+	/* dive "introduction" */
+
+	.project#dive .column-group#group-introduction {
+		grid-template-areas: 
+			"text image image image";
+	}
+	
+	.project#dive .column-image#image-poster {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* dive "showcase" */
+
+	.project#dive .column-group#group-showcase {
+		grid-template-areas: 
+			"image image image image";
+	}
+
+	/* dive "end" */
+
+	.project#dive .column-group#group-end {
+		grid-template-areas: 
+			"image image image text";
+	}
+	
+	.project#dive .column-image#image-box {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* electro-threads */
+
+	/* electro-threads "introduction" */
+
+	.project#electro-threads .column-group {
+		grid-template-areas: 
+			"text image image image";
 	}
 }
 
@@ -637,6 +796,60 @@ header img {
 	.project#f64 .column-text#text-description {
 		margin-top: calc(var(--column-gap-row) * -1);
 	}
+	
+	/* ჰელმანი */
+
+	/* ჰელმანი "introduction" */
+
+	.project#ჰელმანი .column-group {
+		grid-template-areas: 
+			"text image image";
+	}
+	
+	/* marlboro */
+
+	/* marlboro "introduction" */
+
+	.project#marlboro .column-group {
+		grid-template-areas: 
+			"image image text";
+	}
+	
+	/* dive */
+
+	/* dive "introduction" */
+
+	.project#dive .column-group#group-introduction {
+		grid-template-areas: 
+			"text image image";
+	}
+	
+	.project#dive .column-image#image-poster {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* dive "showcase" */
+
+	.project#dive .column-group#group-showcase {
+		grid-template-areas: 
+			"image image image";
+	}
+
+	/* dive "end" */
+
+	.project#dive .column-group#group-end {
+		grid-template-areas: 
+			"image image text";
+	}
+	
+	/* electro-threads */
+
+	/* electro-threads "introduction" */
+
+	.project#electro-threads .column-group {
+		grid-template-areas: 
+			"text image image";
+	}
 }
 
 /* laptop breakpoint */
@@ -693,6 +906,84 @@ header img {
 			".					.					.					image-distortion	image-distortion	image-distortion	image-distortion";
 			
 		grid-template-rows: min-content 1fr var(--poster-overlap) auto var(--poster-overlap);
+	}
+	
+	/* ჰელმანი */
+
+	/* ჰელმანი "introduction" */
+
+	.project#ჰელმანი .column-group {
+		grid-template-areas: 
+			"text text text image image image image";
+	}
+	
+	.project#ჰელმანი .column-image {
+		grid-template-columns: initial;
+	}
+	
+	.project#ჰელმანი .column-image img#sweatshirt {
+		max-height: 600px;
+	}
+	
+	.project#ჰელმანი .column-image img#litho {
+		display: none;
+	}
+	
+	/* marlboro */
+
+	/* marlboro "introduction" */
+
+	.project#marlboro .column-group {
+		grid-template-areas: 
+			"image image image image text text text";
+	}
+	
+	.project#marlboro .column-image {
+		grid-template-columns: initial;
+	}
+	
+	.project#marlboro .column-image img#poster {
+		max-height: 600px;
+	}
+	
+	.project#marlboro .column-image img#detail {
+		display: none;
+	}
+	
+	/* dive */
+
+	/* dive "introduction" */
+
+	.project#dive .column-group#group-introduction {
+		grid-template-areas: 
+			"text text text image image image image";
+	}
+	
+	.project#dive .column-image#image-poster {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	/* dive "showcase" */
+
+	.project#dive .column-group#group-showcase {
+		grid-template-areas: 
+			"image image image image image image image";
+	}
+
+	/* dive "end" */
+
+	.project#dive .column-group#group-end {
+		grid-template-areas: 
+			"image image image image text text text";
+	}
+	
+	/* electro-threads */
+
+	/* electro-threads "introduction" */
+
+	.project#electro-threads .column-group {
+		grid-template-areas: 
+			"text text text image image image image";
 	}
 }
 
