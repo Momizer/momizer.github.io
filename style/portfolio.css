@@ -86,11 +86,11 @@ h1, h2 {
 	font-family: "Helvetica Now Text Light";
 }
 
-.project hgroup h1 {
+hgroup h1 {
 	margin-bottom: 0rem;
 }
 
-.project hgroup h2 {
+hgroup h2 {
 	font-size: 10.1px;
 	font-family: "Helvetica Now Micro Light";
 		
@@ -101,14 +101,20 @@ h1, h2 {
 	margin-bottom: 0px;
 }
 
-.project hgroup h2.justify:not(.multi-line) {
+hgroup h2.justify:not(.multi-line) {
 	text-align: justify;
 	text-align-last: justify;
 	text-justify: inter-character;
 }
 
-.project hgroup:before, .project hgroup h2 {
+hgroup:before, hgroup h2 {
 	font-feature-settings: "tnum", "ss01", "ss02", "ss03", "ss05", "ss07";
+}
+
+ul.toc {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: var(--column-gap);
 }
 
 p, figcaption {
@@ -152,7 +158,7 @@ figcaption.left:before {
 	padding-right: var(--char-spacing);
 }
 
-.project hgroup *:not(.multi-line) span.tag:not(:first-of-type):before {
+hgroup *:not(.multi-line) span.tag:not(:first-of-type):before {
 	--tag-bullet-space: 0.36ch;
 	
 	content:"·";
@@ -160,7 +166,7 @@ figcaption.left:before {
 	margin-right: var(--tag-bullet-space);
 }
 
-.project hgroup .multi-line span.tag {
+hgroup .multi-line span.tag {
 	--tag-hanging-indent: 2ch;
 	margin-left: var(--tag-hanging-indent);
 	text-indent: calc(var(--tag-hanging-indent) * -1);
