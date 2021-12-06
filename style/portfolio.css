@@ -454,6 +454,18 @@ header img {
 	text-indent: var(--counter-spacing);
 }
 
+.resume hgroup {
+	margin-top: 1.5rem;
+}
+
+.resume h2 {
+	margin-bottom: 0.4em;
+}
+
+.resume .column-group {
+	--column-gap: 3rem;
+}
+
 
 
 /* css grid override */
@@ -477,6 +489,16 @@ header img {
 @media only screen and (max-width: 1137px) {
 	main.projects {
 		--main-max-width: calc(calc(calc(var(--column-width-laptop) + var(--column-gap)) * var(--column-amount)) - var(--column-gap));
+	}
+	
+	/* resume */
+	
+	.about .bio {
+		font-size: inherit;
+		font-family: inherit;
+		line-height: inherit;
+		letter-spacing: inherit;
+		max-width: 200px;
 	}
 }
 
@@ -653,10 +675,6 @@ header img {
 		grid-row-start: image-distortion-start;
 		grid-row-end: image-distortion-end;
 	}
-
-	.paragraph-group#resume {
-		grid-column-end: span 2;
-	}
 	
 	/* ჰელმანი */
 
@@ -738,6 +756,12 @@ header img {
 	.project#electro-threads .column-group {
 		grid-template-areas: 
 			"text image image image image";
+	}
+	
+	/* resume */
+	
+	.resume .paragraph-group {
+		grid-column-end: span 2;
 	}
 }
 
@@ -1155,6 +1179,16 @@ header img {
 	.project#electro-threads .column-group {
 		grid-template-areas: 
 			"text text text image image image image";
+	}
+	
+	/* resume */
+	
+	.resume .paragraph-group {
+		grid-column-end: span 4;
+	}
+	
+	.bio {
+		font-size: 52px;
 	}
 }
 
