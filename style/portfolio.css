@@ -126,6 +126,7 @@ hgroup:before, hgroup h2 {
 
 .about {
 	--column-width: 13rem;
+	padding-bottom: var(--group-spacing);
 }
 
 .about header {
