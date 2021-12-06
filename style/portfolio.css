@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Now Text';
+    font-family: 'Helvetica Now Text Light';
     src: url('HelveticaNowText-Light.woff2') format('woff2'),
         url('HelveticaNowText-Light.woff') format('woff');
     font-weight: 300;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Now Text';
+    font-family: 'Helvetica Now Text Light';
     src: url('HelveticaNowText-LightItalic.woff2') format('woff2'),
         url('HelveticaNowText-LightItalic.woff') format('woff');
     font-weight: 300;
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Now Micro';
+    font-family: 'Helvetica Now Micro Light';
     src: url('HelveticaNowMicro-Light.woff2') format('woff2'),
         url('HelveticaNowMicro-Light.woff') format('woff');
     font-weight: 300;
@@ -35,7 +35,7 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Now Micro';
+    font-family: 'Helvetica Now Micro Light';
     src: url('HelveticaNowMicro-LightItalic.woff2') format('woff2'),
         url('HelveticaNowMicro-LightItalic.woff') format('woff');
     font-weight: 300;
