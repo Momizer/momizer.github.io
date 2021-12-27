@@ -1,3 +1,1 @@
-# momizer.github.io
-Corner of the web.
-
+A corner of the web.
